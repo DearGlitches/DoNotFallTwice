@@ -14,12 +14,14 @@ public class PlayerMovement : MonoBehaviour
 	private Rigidbody rigidbody;
 	[SerializeField] private float xMin = -10f;
 	[SerializeField] private float xMax = 10f;
+	private GameVars gameVars;
 	
 	
 	// Use this for initialization
 	void Start () {
 		rigidbody = GetComponent<Rigidbody>();
-		
+		gameVars = GetComponent<GameVars>();
+		Debug.Log("testing console");
 	}
 	
 	// Update is called once per frame
@@ -36,5 +38,15 @@ public class PlayerMovement : MonoBehaviour
 			-10f,
 			movement.z+rigidbody.position.z);
 
+	}
+	
+	// Use to check if Collison
+	private void OnTriggerEnter(Collider other)
+	{
+		Debug.Log("collision");
+		if (other.CompareTag("Collision"))
+		{
+			gameVars.fall();
+		}
 	}
 }
