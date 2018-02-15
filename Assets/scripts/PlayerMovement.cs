@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class PlayerMovement : MonoBehaviour
 {
 
@@ -10,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField]
 	private float speed = 1f;
 	private Rigidbody rigidbody;
+	[SerializeField] private float xMin = -10f;
+	[SerializeField] private float xMax = 10f;
 	
 	
 	// Use this for initialization
@@ -27,7 +31,10 @@ public class PlayerMovement : MonoBehaviour
 		Vector3 movement = new Vector3(moveHorizontal, 0.0f, z_Axe_Movement);
 		rigidbody.velocity = movement * speed;
 		
-		rigidbody.position = new Vector3(rigidbody.position.x + movement.x, 0, rigidbody.position.z + movement.z);
+		rigidbody.position = new Vector3(
+			Mathf.Clamp(rigidbody.position.x + movement.x, xMin, xMax),
+			-10f,
+			movement.z+rigidbody.position.z);
 
 	}
 }
