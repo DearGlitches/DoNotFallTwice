@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 23332102792059524}
   - component: {fileID: 114765778665696148}
   - component: {fileID: 82555782668790742}
+  - component: {fileID: 95388415042180858}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -74,13 +75,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547138231482024}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 10.68, z: 3.63}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+  m_LocalPosition: {x: 0, y: 6.5, z: 2.78}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 4688110618675118}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -90, z: -90}
 --- !u!4 &4215713111901522
 Transform:
   m_ObjectHideFlags: 1
@@ -88,12 +89,12 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1040283144673056}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.00000006088905, y: 0, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 4688110618675118}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: -180, z: -180}
 --- !u!4 &4688110618675118
 Transform:
   m_ObjectHideFlags: 1
@@ -101,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1878294005868180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -8.7, z: -1.53}
+  m_LocalPosition: {x: 0.00000005971863, y: -9.8, z: -1.53}
   m_LocalScale: {x: 3.5965822, y: 3.5965822, z: 3.5965822}
   m_Children:
   - {fileID: 4040073830796126}
@@ -123,14 +124,14 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.01
+    width: 10
+    height: 10
+  near clip plane: 1
   far clip plane: 10000
-  field of view: 99
+  field of view: 106.669044
   orthographic: 1
   orthographic size: 30
-  m_Depth: -1
+  m_Depth: 100
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -140,7 +141,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -288,6 +289,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95388415042180858
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1878294005868180}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &95552483914483330
 Animator:
   serializedVersion: 3
@@ -316,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 45f302f02699b4243a7f033ee67e0230, type: 2}
+  profile: {fileID: 11400000, guid: 29e6171921e5c2e49878b051beb32c20, type: 2}
 --- !u!114 &114765778665696148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -329,17 +347,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   z_Axe_Movement: 1
-  speed: 0.4
+  speed: 20
   xMin: -30
   xMax: 30
   globalvars: {fileID: 0}
   endZDistance: 1000
   remainingDistance: 0
   drunkMoveMult: 1.2
+  cameraPlayer: {fileID: 20798975126423308}
+  player: {fileID: 1040283144673056}
+  road: {fileID: 0}
   audioSrc: {fileID: 82555782668790742}
   passingCars:
   - {fileID: 8300000, guid: a4c82d1708cd1fc49a9b3abf8101c84e, type: 3}
   - {fileID: 8300000, guid: 0bcb241fbb0fe584eba31b152365d69f, type: 3}
+  simon: {fileID: 95552483914483330}
 --- !u!124 &124096831419019100
 Behaviour:
   m_ObjectHideFlags: 1
