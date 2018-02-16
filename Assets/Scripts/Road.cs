@@ -13,17 +13,15 @@ public class Road : MonoBehaviour
 	[Range(4,20)]
 	public int NumberOfRows;
 	private List<GameObject> _obstacles;
+	private GameObject[,] _obstacleGrid;
 	private Vector3 _roadPosition;
 	private float _columnWidth;
 	private float _rowHeight;
 
-	public GameObject WallPrefab;
-	public GameObject HolePrefab;
-	public GameObject BananaPrefab;
-	public GameObject CarPrefab;
 	public GameObject BinPrefab;
 	public GameObject RedBarrierPrefab;
 	public GameObject YellowBarrierPrefab;
+	public GameObject BrokenBottlePrefab;
 	
 
 
@@ -34,14 +32,19 @@ public class Road : MonoBehaviour
 
 		for (int i = 0; i < NumberOfObstacles; i++)
 		{
-			if (rnd.NextDouble() >= 0.5)
+			var obstacle = RandomObstacle(rnd.Next(5));
+			var _row = rnd.Next(NumberOfRows);
+			var _column = rnd.NextDouble() >= 0.5 ? 0 : NumberOfColumns - 1;
+			while (_obstacleGrid[_column, _row] != null)
 			{
-				var obstacle = RandomObstacle(rnd.Next(7));
-				var _row = rnd.Next(NumberOfRows);
-				var _column = rnd.NextDouble() >= 0.5 ? 0 : 3;
-				obstacle.transform.position = _roadPosition + new Vector3(_columnWidth * _column + _columnWidth/2, _rowHeight * _row + _rowHeight/2, -0.5f);
-				_obstacles.Add(obstacle);
+				_row = rnd.Next(NumberOfRows);
+				_column = rnd.NextDouble() >= 0.5 ? 0 : NumberOfColumns - 1;
 			}
+
+			obstacle.transform.position = _roadPosition + new Vector3(_columnWidth * _column + _columnWidth/2, _rowHeight * _row + _rowHeight/2, -0.5f);
+			_obstacleGrid[_column, _row] = obstacle;
+
+			_obstacles.Add(obstacle);
 		}
 		
 		
@@ -54,21 +57,15 @@ public class Road : MonoBehaviour
 		switch (num)
 		{
 			case 0:
-				return Instantiate(WallPrefab);
+				return Instantiate(BrokenBottlePrefab);
 			case 1:
-				return Instantiate(HolePrefab);
-			case 2:
-				return Instantiate(BananaPrefab);
-			case 3:
-				return Instantiate(CarPrefab);
-			case 4:
 				return Instantiate(BinPrefab);
-			case 5:
+			case 2:
 				return Instantiate(RedBarrierPrefab);
-			case 6:
+			case 3:
 				return Instantiate(YellowBarrierPrefab);
 			default:
-				return Instantiate(WallPrefab);
+				return Instantiate(RedBarrierPrefab);
 		}
 	}
 
@@ -76,6 +73,7 @@ public class Road : MonoBehaviour
 	void Start ()
 	{
 		_obstacles = new List<GameObject>();
+		_obstacleGrid = new GameObject[NumberOfColumns, NumberOfRows];
 		var _sizeX = GetComponent<SpriteRenderer>().size.x;
 		var _sizeY = GetComponent<SpriteRenderer>().size.y;
 		var box = GetComponent<BoxCollider2D>();
