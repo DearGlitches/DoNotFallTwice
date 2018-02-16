@@ -29,7 +29,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1581745453826054
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +115,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovingUp: 1
   Speed: 0.8
-  Globalvars: {fileID: 0}
 --- !u!135 &135592861804634198
 SphereCollider:
   m_ObjectHideFlags: 1

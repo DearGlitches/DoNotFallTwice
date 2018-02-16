@@ -75,7 +75,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547138231482024}
-  m_LocalRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 6.5, z: 2.78}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
@@ -119,16 +119,16 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 10
     height: 10
-  near clip plane: 1
+  near clip plane: 0.01
   far clip plane: 10000
-  field of view: 106.669044
+  field of view: 126
   orthographic: 1
   orthographic size: 30
   m_Depth: 100
@@ -298,7 +298,7 @@ Animator:
   m_GameObject: {fileID: 1878294005868180}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a552f0f4bff70f94eb5040e94c37357e, type: 2}
+  m_Controller: {fileID: 9100000, guid: b9f2da066ddb68349bf989b5d111d511, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 29e6171921e5c2e49878b051beb32c20, type: 2}
+  profile: {fileID: 11400000, guid: 27b66e7d13572d84987b1d3595adbb22, type: 2}
 --- !u!114 &114765778665696148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -353,7 +353,7 @@ MonoBehaviour:
   globalvars: {fileID: 0}
   endZDistance: 1000
   remainingDistance: 0
-  drunkMoveMult: 1.2
+  drunkMoveMult: 2.2
   cameraPlayer: {fileID: 20798975126423308}
   player: {fileID: 1040283144673056}
   road: {fileID: 0}

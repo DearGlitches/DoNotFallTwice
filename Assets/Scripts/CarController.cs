@@ -20,12 +20,13 @@ public class CarController : MonoBehaviour
 	public Vector3 BottomStart = new Vector3(8f, -9.5f, -63f);
 
 	public GameObject GlobalVars;
+	private GameVars _gameVars;
 
 	private List<GameObject> _cars;
 
 	private float _nextCarTime;
 
-	private const float EPSILON = 0.01f;
+	private const float Epsilon = 0.01f;
 	
 	
 	// Use this for initialization
@@ -33,6 +34,7 @@ public class CarController : MonoBehaviour
 		
 		_cars = new List<GameObject>();
 
+		_gameVars = GlobalVars.GetComponent<GameVars>();
 
 		LaunchCars();
 		
@@ -42,7 +44,7 @@ public class CarController : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		if (Math.Abs(_nextCarTime - Time.time) < EPSILON)
+		if (Math.Abs(_nextCarTime - Time.time) < Epsilon)
 		{
 			LaunchCars();
 		}
@@ -57,30 +59,31 @@ public class CarController : MonoBehaviour
 			bottomCar = Instantiate(CarPrefab2);
 		}
 
-		var topCar = Instantiate(CarPrefab1);
+		var topCar = Instantiate(CarPrefab2);
 		if (Random.value >= 0.5f)
 		{
-			topCar = Instantiate(CarPrefab2);
+			topCar = Instantiate(CarPrefab1);
 		}
-
+		
 		var script = bottomCar.GetComponent<Car>();
 		script.MovingUp = true;
-		script.Globalvars = GlobalVars;
-		script.Speed = BaseSpeed;// + Random.value / 2;
+		script.Speed = BaseSpeed * _gameVars.difficulty;// + Random.value / 2;
 		bottomCar.transform.position = BottomStart;
 		bottomCar.transform.parent = transform;
 
 		script = topCar.GetComponent<Car>();
 		script.MovingUp = false;
-		script.Globalvars = GlobalVars;
-		script.Speed = BaseSpeed;// + Random.value / 2;
+		script.Speed = BaseSpeed * _gameVars.difficulty;// + Random.value / 2;
 		topCar.transform.position = TopStart;
 		topCar.transform.parent = transform;
 		topCar.transform.rotation = Quaternion.Euler(90, 0, 180);
+
+		bottomCar.active = true;
+		topCar.active = true;
 		
 		_cars.Add(bottomCar);
 		_cars.Add(topCar);
 
-		_nextCarTime = Time.time + (Random.value+0.1f) * FrequencyOfCars;
+		_nextCarTime = Time.time + (Random.value+0.2f) * FrequencyOfCars;
 	}
 }
