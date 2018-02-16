@@ -12,7 +12,7 @@ public class Road : MonoBehaviour
 	
 	[Range(4,20)]
 	public int NumberOfRows;
-	private GameObject[,] _obstacleGrid;
+	private List<GameObject> _obstacles;
 	private Vector3 _roadPosition;
 	private float _columnWidth;
 	private float _rowHeight;
@@ -32,17 +32,19 @@ public class Road : MonoBehaviour
 		var rnd = new Random();
 
 
-		for (var i = 1; i < _obstacleGrid.GetLength(0) - 1; i+=2)
+		for (int i = 0; i < NumberOfObstacles; i++)
 		{
-			for (var j = 1; j < _obstacleGrid.GetLength(1) - 1; j+=2)
+			if (rnd.NextDouble() >= 0.5)
 			{
-				var prob = rnd.NextDouble();
-				if (!(prob > 0.5)) continue;
 				var obstacle = RandomObstacle(rnd.Next(7));
-				obstacle.transform.position = _roadPosition + new Vector3(_columnWidth * i + 0.5f, _rowHeight * j + 0.5f, -0.5f);
-				_obstacleGrid[i, j] = obstacle;
+				var _row = rnd.Next(NumberOfRows);
+				var _column = rnd.NextDouble() >= 0.5 ? 0 : 3;
+				obstacle.transform.position = _roadPosition + new Vector3(_columnWidth * _column + _columnWidth/2, _rowHeight * _row + _rowHeight/2, -0.5f);
+				_obstacles.Add(obstacle);
 			}
 		}
+		
+		
 
 		
 	}
@@ -73,7 +75,7 @@ public class Road : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		_obstacleGrid = new GameObject[NumberOfColumns,NumberOfRows];
+		_obstacles = new List<GameObject>();
 		var _sizeX = GetComponent<SpriteRenderer>().size.x;
 		var _sizeY = GetComponent<SpriteRenderer>().size.y;
 		var box = GetComponent<BoxCollider2D>();
@@ -89,7 +91,16 @@ public class Road : MonoBehaviour
 	void Update () {
 		if (Input.GetKey("return"))
 		{
+			DestroyObstacles();
 			ChooseRandomObstacles();
+		}
+	}
+
+	private void DestroyObstacles()
+	{
+		for (var i = 0; i < _obstacles.Count; i++)
+		{
+			Destroy(_obstacles.ToArray()[i]);
 		}
 	}
 }
