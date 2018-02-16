@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
-
+using Random = UnityEngine.Random;
 
 
 public class PlayerMovement : MonoBehaviour
@@ -15,9 +17,15 @@ public class PlayerMovement : MonoBehaviour
 	private GameVars gameVars;
 	public GameObject globalvars;
 	public float endZDistance = 100f;
-	private float oldlMove = 0f;
+	private float oldlRandomMove = 0f;
 	public float drunkMoveMult = 0.7f;
-	
+	private float xRandomMin = -1f;	// min x random move for simon's walk
+	private float xRandomMax = 1f;	// max x random move for simon's walk
+
+	private static Random random = new Random();
+	private static bool haveNextNextGaussian;
+	private static double nextNextGaussian;
+	private float sigma = 0.4f;
 	
 	
 	// Use this for initialization
@@ -39,8 +47,11 @@ public class PlayerMovement : MonoBehaviour
 				gameVars.nextLevel();
 			}
 
-			float moveHorizontal = Input.GetAxis("Horizontal") + (float)(Random.value - 0.5d)  * gameVars.alcool * drunkMoveMult;
-			oldlMove = Mathf.Clamp(moveHorizontal, xMin, xMax);
+			// float moveHorizontal = Input.GetAxis("Horizontal") + (float)(Random.value - 0.5d)  * gameVars.alcool * drunkMoveMult;
+			float randomMove = gaussianRandom(sigma, oldlRandomMove);
+			oldlRandomMove = randomMove;
+			float moveHorizontal = Input.GetAxis("Horizontal") + randomMove  * gameVars.alcool * drunkMoveMult;
+			// oldlMove = Mathf.Clamp(moveHorizontal, xMin, xMax);
 		
 			Vector3 movement = new Vector3(moveHorizontal, 0.0f, z_Axe_Movement);
 			rigidbody.velocity = movement * speed;
@@ -53,6 +64,40 @@ public class PlayerMovement : MonoBehaviour
 		}
 
 
+	}
+
+	private float gaussianRandom(float sigma, float offset)
+	{
+		float retVal;
+		do
+		{
+			retVal = (float) NextGaussian() * sigma + offset;
+		} while (retVal < xRandomMin || retVal > xRandomMax);
+
+		return retVal;
+	}
+	
+	private static double NextGaussian()
+	{
+		if (haveNextNextGaussian)
+		{
+			haveNextNextGaussian = false;
+			return nextNextGaussian;
+		}
+		else
+		{
+			double v1, v2, s;
+			do
+			{
+				v1 = 2 * Random.value - 1;
+				v2 = 2 * Random.value - 1;
+				s = v1 * v1 + v2 * v2;
+			} while (s >= 1 || s == 0);
+			double multiplier = Math.Sqrt(-2 * Math.Log(s) / s);
+			nextNextGaussian = v2 * multiplier;
+			haveNextNextGaussian = true;
+			return v1 * multiplier;
+		}
 	}
 	
 	// Use to check if Collison
