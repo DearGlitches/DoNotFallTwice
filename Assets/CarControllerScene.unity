@@ -415,12 +415,22 @@ Prefab:
     - target: {fileID: 224797889311340854, guid: 25e8dd201f0ee2943af525a70dc8335a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 41.799988
+      value: 41.80005
       objectReference: {fileID: 0}
     - target: {fileID: 224716813820624180, guid: 25e8dd201f0ee2943af525a70dc8335a,
         type: 2}
       propertyPath: m_AnchoredPosition.x
       value: 43.19995
+      objectReference: {fileID: 0}
+    - target: {fileID: 224733184290918190, guid: 25e8dd201f0ee2943af525a70dc8335a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 11.600098
+      objectReference: {fileID: 0}
+    - target: {fileID: 224018334920882346, guid: 25e8dd201f0ee2943af525a70dc8335a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 11.600098
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25e8dd201f0ee2943af525a70dc8335a, type: 2}
@@ -498,7 +508,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4348799455274222, guid: b237fa9df271b4cd1ac97e39c59d66aa, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.5
+      value: -14.5
       objectReference: {fileID: 0}
     - target: {fileID: 4348799455274222, guid: b237fa9df271b4cd1ac97e39c59d66aa, type: 2}
       propertyPath: m_LocalPosition.y
@@ -533,10 +543,9 @@ Prefab:
       propertyPath: Globalvars
       value: 
       objectReference: {fileID: 1874865247}
-    - target: {fileID: 114611542603215034, guid: b237fa9df271b4cd1ac97e39c59d66aa,
-        type: 2}
-      propertyPath: Speed
-      value: 0.8
+    - target: {fileID: 1467201438974874, guid: b237fa9df271b4cd1ac97e39c59d66aa, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b237fa9df271b4cd1ac97e39c59d66aa, type: 2}
@@ -594,6 +603,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarPrefab: {fileID: 1467201438974874, guid: b237fa9df271b4cd1ac97e39c59d66aa, type: 2}
+  NumberOfCars: 0
+  BaseSpeed: 0
+  TopStart: {x: -14.5, y: 2, z: 1150}
+  BottomStart: {x: 3.5, y: 2, z: -63}
+  GlobalVars: {fileID: 1874865247}
 --- !u!1001 &960447145
 Prefab:
   m_ObjectHideFlags: 0
@@ -1080,7 +1094,7 @@ Prefab:
     - target: {fileID: 20798975126423308, guid: ba879a0402b86254bb20fecb61b79d07,
         type: 2}
       propertyPath: field of view
-      value: 99
+      value: 148
       objectReference: {fileID: 0}
     - target: {fileID: 4688110618675118, guid: ba879a0402b86254bb20fecb61b79d07, type: 2}
       propertyPath: m_LocalScale.x
@@ -1141,7 +1155,7 @@ Prefab:
     - target: {fileID: 20798975126423308, guid: ba879a0402b86254bb20fecb61b79d07,
         type: 2}
       propertyPath: orthographic size
-      value: 30
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba879a0402b86254bb20fecb61b79d07, type: 2}
