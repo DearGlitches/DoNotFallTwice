@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
 	private GameVars gameVars;
 	public GameObject globalvars;
 	public float endZDistance = 100f;
+	private float oldlMove = 0f;
+	public float drunkMoveMult = 0.7f;
+	
 	
 	
 	// Use this for initialization
@@ -36,15 +39,17 @@ public class PlayerMovement : MonoBehaviour
 				gameVars.nextLevel();
 			}
 
-			float moveHorizontal = Input.GetAxis("Horizontal");
+			float moveHorizontal = Input.GetAxis("Horizontal") + (float)(Random.value - 0.5d)  * gameVars.alcool * drunkMoveMult;
+			oldlMove = Mathf.Clamp(moveHorizontal, xMin, xMax);
 		
 			Vector3 movement = new Vector3(moveHorizontal, 0.0f, z_Axe_Movement);
 			rigidbody.velocity = movement * speed;
 		
 			rigidbody.position = new Vector3(
-				Mathf.Clamp(rigidbody.position.x + movement.x, xMin, xMax),
+				Mathf.Clamp(rigidbody.position.x + movement.x*speed, xMin, xMax),
 				-10f,
-				movement.z+rigidbody.position.z);
+				rigidbody.position.z + movement.z* speed);
+				
 		}
 
 

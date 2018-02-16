@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PostProcessing;
 
+
+
 public class GameVars : MonoBehaviour
 {
 	public Camera motion_blur_camera;
@@ -22,7 +24,7 @@ public class GameVars : MonoBehaviour
 	private float nextDrink = 0.5f;	// used to store the next minimum time for a drink
 	private float nextLoss = 0.1f;	// used to store the next minimum time for an alcool loss
 	public bool gameEnded = false;
-	
+	public float score = 0f;
 
 	
 	// Use this for initialization
@@ -55,6 +57,8 @@ public class GameVars : MonoBehaviour
 			nextLoss -= myAlcoolLossTime;
 			myAlcoolLossTime = 0.0f;
 
+
+			score += alcool > 0 ? alcool : 0;
 		}
 
 		if (alcool <= 0)
@@ -71,6 +75,8 @@ public class GameVars : MonoBehaviour
 		}
 
 		
+		
+		
 
 	}
 
@@ -85,6 +91,7 @@ public class GameVars : MonoBehaviour
 	private void endGame()
 	{
 		Debug.Log("gameOver");
+		Debug.Log("Score: " + score);
 		Time.timeScale = 0;
 		gameEnded = true;
 	}
@@ -92,6 +99,7 @@ public class GameVars : MonoBehaviour
 	public void nextLevel()
 	{
 		Debug.Log("Next Level");
+		Debug.Log("Score: " + score);
 		Time.timeScale = 0;
 		gameEnded = true;
 	}

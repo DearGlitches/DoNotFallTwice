@@ -402,12 +402,13 @@ MonoBehaviour:
   littledrunk: {fileID: 11400000, guid: 29e6171921e5c2e49878b051beb32c20, type: 2}
   drunk: {fileID: 11400000, guid: 45f302f02699b4243a7f033ee67e0230, type: 2}
   maxAlcool: 1
-  alcoolLossPerTime: 0.05
+  alcoolLossPerTime: 0.025
   alcool: 1
   drinkDelta: 0.5
   alcoolLossDelta: 0.1
   alcoolPerDrink: 0.3
   gameEnded: 0
+  score: 0
 --- !u!4 &730084824
 Transform:
   m_ObjectHideFlags: 0
@@ -1316,12 +1317,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ae0231a65fec34f91501586bf2dab0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  z_Axe_Movement: 0.2
-  speed: 1
+  z_Axe_Movement: 1
+  speed: 0.1
   xMin: -5
   xMax: 5
   globalvars: {fileID: 730084822}
   endZDistance: 100
+  drunkMoveMult: 1.2
 --- !u!23 &2085162069
 MeshRenderer:
   m_ObjectHideFlags: 0
