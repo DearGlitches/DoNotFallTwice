@@ -6,7 +6,6 @@ public class Road : MonoBehaviour
 {
 	[Range(5,20)]
 	public int NumberOfObstacles;
-	private Stack<GameObject> _obstacles;
 	private GameObject[,] _obstacleGrid;
 	private Vector3 _roadPosition;
 
@@ -14,24 +13,10 @@ public class Road : MonoBehaviour
 	public GameObject HolePrefab;
 	public GameObject BananaPrefab;
 	public GameObject CarPrefab;
-	
-
-	public Road()
-	{
-		_obstacleGrid = new GameObject[8,6];
-		_obstacles = new Stack<GameObject>();
-		ChooseRandomObstacles();
-	}
 
 	private void ChooseRandomObstacles()
 	{
 		var rnd = new Random();
-		
-		for (var i = 0; i < NumberOfObstacles; i++)
-		{
-			var num = rnd.Next(4);
-			_obstacles.Push(RandomObstacle(num));
-		}
 
 
 		for (var i = 1; i < _obstacleGrid.GetLength(0) - 1; i+=2)
@@ -40,13 +25,12 @@ public class Road : MonoBehaviour
 			{
 				var prob = rnd.NextDouble();
 				if (!(prob > 0.5)) continue;
-				var obstacle = _obstacles.Count > 0 ? _obstacles.Pop() : Instantiate(WallPrefab);
-				obstacle.transform.position = _roadPosition + new Vector3(i + 0.5f, 0, j + 0.5f);
+				var obstacle = RandomObstacle(rnd.Next(4));
+				obstacle.transform.position = _roadPosition + new Vector3(i + 0.5f, j + 0.5f, -0.5f);
 				_obstacleGrid[i, j] = obstacle;
 			}
 		}
-		
-		_obstacles.Clear();
+
 		
 	}
 
@@ -60,7 +44,7 @@ public class Road : MonoBehaviour
 				return Instantiate(HolePrefab);
 			case 2:
 				return Instantiate(BananaPrefab);
-			case 4:
+			case 3:
 				return Instantiate(CarPrefab);
 			default:
 				return Instantiate(WallPrefab);
@@ -71,8 +55,9 @@ public class Road : MonoBehaviour
 	void Start ()
 	{
 		_obstacleGrid = new GameObject[8,6];
-		_obstacles = new Stack<GameObject>();
-		_roadPosition = transform.position;
+		var _sizeX = GetComponent<SpriteRenderer>().size.x;
+		var _sizeY = GetComponent<SpriteRenderer>().size.y;
+		_roadPosition = transform.position - new Vector3(_sizeX/2, _sizeY/2, 0);
 		ChooseRandomObstacles();
 	}
 	
