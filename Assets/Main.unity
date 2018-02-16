@@ -849,6 +849,12 @@ Prefab:
       propertyPath: road
       value: 
       objectReference: {fileID: 949272028}
+    - target: {fileID: 114280773641797966, guid: ba879a0402b86254bb20fecb61b79d07,
+        type: 2}
+      propertyPath: profile
+      value: 
+      objectReference: {fileID: 11400000, guid: 27b66e7d13572d84987b1d3595adbb22,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba879a0402b86254bb20fecb61b79d07, type: 2}
   m_IsPrefabParent: 0
