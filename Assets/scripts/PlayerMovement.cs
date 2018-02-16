@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 	private static Random random = new Random();
 	private static bool haveNextNextGaussian;
 	private static double nextNextGaussian;
-	private float sigma = 0.4f; // sigma for random's walk gaussian
+	private float sigma = 0.3f; // sigma for random's walk gaussian
 
 	public Camera cameraPlayer; // used to sway camera while drunk
 	public GameObject player; // used to sway while drunk
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
 	{
 		if (simon.GetBool("falling"))
 		{

@@ -40,7 +40,7 @@ public class CarController : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 
 		if (Math.Abs(_nextCarTime - Time.time) < EPSILON)
 		{
@@ -81,6 +81,6 @@ public class CarController : MonoBehaviour
 		_cars.Add(bottomCar);
 		_cars.Add(topCar);
 
-		_nextCarTime = Time.time + Random.value * FrequencyOfCars;
+		_nextCarTime = Time.time + (Random.value+0.1f) * FrequencyOfCars;
 	}
 }

@@ -562,6 +562,21 @@ Prefab:
       propertyPath: NumberOfRows
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 212317725830338752, guid: 8f1346f6eb66044eeb5044485d0a1020,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212317725830338752, guid: 8f1346f6eb66044eeb5044485d0a1020,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212317725830338752, guid: 8f1346f6eb66044eeb5044485d0a1020,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f1346f6eb66044eeb5044485d0a1020, type: 2}
   m_IsPrefabParent: 0
@@ -1347,7 +1362,7 @@ MonoBehaviour:
   globalvars: {fileID: 1874865247}
   endZDistance: 1000
   remainingDistance: 0
-  drunkMoveMult: 1.2
+  drunkMoveMult: 2.2
   cameraPlayer: {fileID: 1548164628}
   player: {fileID: 129001840}
   road: {fileID: 949272028}
@@ -3792,7 +3807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 29e6171921e5c2e49878b051beb32c20, type: 2}
+  profile: {fileID: 11400000, guid: 27b66e7d13572d84987b1d3595adbb22, type: 2}
 --- !u!81 &1961768717
 AudioListener:
   m_ObjectHideFlags: 0
