@@ -109,7 +109,11 @@ public class PlayerMovement : MonoBehaviour
 		// Debug.Log("collision");
 		if (other.CompareTag("Collision"))
 		{
-			gameVars.fall();
+			gameVars.fall(false);
+		}
+		else if (other.CompareTag("Car"))
+		{
+			gameVars.fall(true);
 		}
 	}
 }

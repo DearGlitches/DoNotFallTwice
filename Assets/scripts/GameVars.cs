@@ -31,6 +31,7 @@ public class GameVars : MonoBehaviour
 	private AudioSource audioSrc;
 
 	public AudioClip deathSound;
+	public AudioClip collisonWithCarSound;
 
 	
 	// Use this for initialization
@@ -87,9 +88,12 @@ public class GameVars : MonoBehaviour
 		
 
 	}
-
-	public void fall()
+	
+	// fucking self-explanotory var
+	public void fall(bool carInvolvedInAccident)
 	{
+		
+		
 
 		
 		if (--health == 0)
@@ -99,9 +103,17 @@ public class GameVars : MonoBehaviour
 		}
 		else
 		{
-			AudioClip clip = collisonSounds[Random.Range(0, collisonSounds.Length - 1)];
 			float vol = Random.Range(0.2f, 0.5f);
-			audioSrc.PlayOneShot(clip, vol);
+			if (carInvolvedInAccident)
+			{
+				audioSrc.PlayOneShot(collisonWithCarSound, vol);
+			}
+			else
+			{
+				AudioClip clip = collisonSounds[Random.Range(0, collisonSounds.Length - 1)];
+				audioSrc.PlayOneShot(clip, vol);
+			}
+
 		}
 		
 
