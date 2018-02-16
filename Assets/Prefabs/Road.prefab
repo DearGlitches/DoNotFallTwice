@@ -65,9 +65,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc90605e441fb4643a156245b4716ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfObstacles: 7
+  NumberOfObstacles: 5
   NumberOfColumns: 4
-  NumberOfRows: 4
+  NumberOfRows: 6
   BinPrefab: {fileID: 1299455723960294, guid: e8f1629b488cf4f2aa70e940af44ec89, type: 2}
   RedBarrierPrefab: {fileID: 1601071972772788, guid: 95550d47753984f7fac4b82621a2737c,
     type: 2}
