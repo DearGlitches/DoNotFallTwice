@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PostProcessing;
 
+
+
 public class GameVars : MonoBehaviour
 {
 	public Camera motion_blur_camera;
@@ -11,13 +13,19 @@ public class GameVars : MonoBehaviour
 	public PostProcessingProfile drunk;
 	
 	private int health = 2;
-	[SerializeField] private float maxAlcool = 1f;
-	[SerializeField] private float alcoolLossPerFrame = 0.01f;
+	public float maxAlcool = 1f;
+	public float alcoolLossPerTime = 0.005f;
 	public float alcool;
-	[SerializeField] private float drinkDelta = 0.5f;	// time you can drink per time
-	[SerializeField] private float alcoolPerDrink = 0.1f;	// alcohol per drink
-	private float myDrinkTime = 0.0f;
-	private float nextDrink = 0.5f;
+	public float drinkDelta = 0.5f;	// time you can drink per time
+	public float alcoolLossDelta = 0.1f; // delta for alcohol loss
+	public float alcoolPerDrink = 0.1f;	// alcohol per drink
+	private float myDrinkTime = 0.0f;	// used to check if we can drink again
+	private float myAlcoolLossTime = 0.0f; // used to check if we can lose alcool again
+	private float nextDrink = 0.5f;	// used to store the next minimum time for a drink
+	private float nextLoss = 0.1f;	// used to store the next minimum time for an alcool loss
+	public bool gameEnded = false;
+	public float score = 0f;
+
 	
 	// Use this for initialization
 	void Start ()
@@ -30,6 +38,7 @@ public class GameVars : MonoBehaviour
 	{
 
 		myDrinkTime += Time.deltaTime;
+		myAlcoolLossTime += Time.deltaTime;
 
 		if (Input.GetButton("Jump") && myDrinkTime > nextDrink && alcool < maxAlcool)
 		{
@@ -40,7 +49,18 @@ public class GameVars : MonoBehaviour
 			myDrinkTime = 0.0f;
 		}
 
-		alcool -= alcoolLossPerFrame;
+		if (myAlcoolLossTime > nextLoss)
+		{
+			nextLoss = myAlcoolLossTime + alcoolLossDelta;
+			alcool -= alcoolLossPerTime;
+
+			nextLoss -= myAlcoolLossTime;
+			myAlcoolLossTime = 0.0f;
+
+
+			score += alcool > 0 ? alcool : 0;
+		}
+
 		if (alcool <= 0)
 		{
 			alcool = 0;
@@ -54,7 +74,9 @@ public class GameVars : MonoBehaviour
 			motion_blur_camera.GetComponent<PostProcessingBehaviour>().profile = drunk;
 		}
 
-
+		
+		
+		
 
 	}
 
@@ -68,6 +90,19 @@ public class GameVars : MonoBehaviour
 
 	private void endGame()
 	{
+		Debug.Log("gameOver");
+		Debug.Log("Score: " + score);
 		Time.timeScale = 0;
+		gameEnded = true;
 	}
+
+	public void nextLevel()
+	{
+		Debug.Log("Next Level");
+		Debug.Log("Score: " + score);
+		Time.timeScale = 0;
+		gameEnded = true;
+	}
+
+
 }

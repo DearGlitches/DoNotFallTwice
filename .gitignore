@@ -27,7 +27,11 @@ ExportedObj/
 *.svd
 *.pdb
 
+<<<<<<< HEAD
+# idea
+=======
 # Jetbrains
+>>>>>>> 27b3b32d91fbecbc8507d51721253bf65aaba83d
 *.idea
 
 # Unity3D generated meta files
