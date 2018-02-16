@@ -33,6 +33,8 @@ public class GameVars : MonoBehaviour
 	public AudioClip deathSound;
 	public AudioClip collisonWithCarSound;
 
+	public AudioClip drinkingSound;
+
 	
 	// Use this for initialization
 	void Start ()
@@ -51,6 +53,7 @@ public class GameVars : MonoBehaviour
 
 		if (Input.GetButton("Jump") && myDrinkTime > nextDrink && alcool < maxAlcool)
 		{
+			audioSrc.PlayOneShot(drinkingSound, 1.2f);
 			nextDrink = myDrinkTime + drinkDelta;
 			alcool += alcoolPerDrink;
 
