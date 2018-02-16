@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PostProcessing;
-
+using UnityEngine.SceneManagement;
 
 
 public class GameVars : MonoBehaviour
@@ -49,7 +49,13 @@ public class GameVars : MonoBehaviour
 		//alcool = 0f;
 		GameEnded = false;
 	}
-	
+
+	/*private void Awake()
+	{
+		DontDestroyOnLoad(transform.gameObject);
+	}
+	*/
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -169,8 +175,18 @@ public class GameVars : MonoBehaviour
 	{
 		Debug.Log("gameOver");
 		Debug.Log("Score: " + score);
-		Time.timeScale = 0;
+		StartCoroutine("deathTimeout");
+		//Time.timeScale = 0;
 		GameEnded = true;
+	}
+
+	IEnumerator deathTimeout()
+	{
+		Debug.Log("EndTimeout");
+		yield return new WaitForSeconds(1f);
+		PlayerPrefs.SetFloat("score", score);
+		PlayerPrefs.SetFloat("difficulty", difficulty);
+		SceneManager.LoadScene("GameOver");		
 	}
 
 	public void nextLevel()
