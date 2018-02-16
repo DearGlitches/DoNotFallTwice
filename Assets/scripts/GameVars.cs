@@ -5,11 +5,11 @@ using UnityEngine;
 public class GameVars : MonoBehaviour
 {
 	private int health = 2;
-	[SerializeField] private float maxAlcool = 10f;
+	[SerializeField] private float maxAlcool = 1f;
 	[SerializeField] private float alcoolLossPerFrame = 0.01f;
 	public float alcool;
 	[SerializeField] private float drinkDelta = 0.5f;	// time you can drink per time
-	[SerializeField] private float alcoolPerDrink = 0.3f;	// alcohol per drink
+	[SerializeField] private float alcoolPerDrink = 0.1f;	// alcohol per drink
 	private float myDrinkTime = 0.0f;
 	private float nextDrink = 0.5f;
 	
@@ -18,7 +18,7 @@ public class GameVars : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		alcool = 0f;
+		//alcool = 0f;
 	}
 	
 	// Update is called once per frame
@@ -36,7 +36,10 @@ public class GameVars : MonoBehaviour
 			myDrinkTime = 0.0f;
 		}
 
-		maxAlcool -= alcoolLossPerFrame;
+		alcool -= alcoolLossPerFrame;
+		if (alcool < 0)
+			alcool = 0;
+		
 
 	}
 
