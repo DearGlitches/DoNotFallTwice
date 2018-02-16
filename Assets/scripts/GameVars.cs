@@ -12,7 +12,7 @@ public class GameVars : MonoBehaviour
 	public PostProcessingProfile littledrunk;
 	public PostProcessingProfile drunk;
 	
-	public int health = 2;
+	public int health = 1;
 	public float maxAlcool = 1f;
 	public float alcoolLossPerTime = 0.005f;
 	public float alcool;
@@ -23,14 +23,22 @@ public class GameVars : MonoBehaviour
 	private float myAlcoolLossTime = 0.0f; // used to check if we can lose alcool again
 	private float nextDrink = 0.5f;	// used to store the next minimum time for a drink
 	private float nextLoss = 0.1f;	// used to store the next minimum time for an alcool loss
-	public bool gameEnded = false;
+	public bool GameEnded { get; private set; }
 	public float score = 0f;
+	public float difficulty = 1f;	// game difficulty, used to change car speed
+
+	public AudioClip[] collisonSounds;
+	private AudioSource audioSrc;
+
+	public AudioClip deathSound;
 
 	
 	// Use this for initialization
 	void Start ()
 	{
+		audioSrc = (AudioSource)gameObject.GetComponent<AudioSource>();
 		//alcool = 0f;
+		GameEnded = false;
 	}
 	
 	// Update is called once per frame
@@ -82,10 +90,21 @@ public class GameVars : MonoBehaviour
 
 	public void fall()
 	{
+
+		
 		if (--health == 0)
 		{
+			audioSrc.PlayOneShot(deathSound, 0.5f);
 			endGame();
 		}
+		else
+		{
+			AudioClip clip = collisonSounds[Random.Range(0, collisonSounds.Length - 1)];
+			float vol = Random.Range(0.2f, 0.5f);
+			audioSrc.PlayOneShot(clip, vol);
+		}
+		
+
 	}
 
 	private void endGame()
@@ -93,7 +112,7 @@ public class GameVars : MonoBehaviour
 		Debug.Log("gameOver");
 		Debug.Log("Score: " + score);
 		Time.timeScale = 0;
-		gameEnded = true;
+		GameEnded = true;
 	}
 
 	public void nextLevel()
@@ -101,7 +120,7 @@ public class GameVars : MonoBehaviour
 		Debug.Log("Next Level");
 		Debug.Log("Score: " + score);
 		Time.timeScale = 0;
-		gameEnded = true;
+		GameEnded = true;
 	}
 
 

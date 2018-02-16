@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\adria\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_DoNotFallTwice.1961299203.00" t="ExcludeRecursive" />
-    <e p="C:\Users\adria\Documents\GameJam\2018\DoNotFallTwice" t="IncludeRecursive">
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
@@ -180,17 +179,17 @@
             </e>
           </e>
         </e>
-        <e p="Road.cs" t="Include" />
-        <e p="scripts" t="Include">
+        <e p="Scripts" t="Include">
           <e p="beer_fluidifier.cs" t="Include" />
           <e p="beerometer.cs" t="Include" />
           <e p="GameVars.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
+          <e p="Road.cs" t="Include" />
           <e p="slider_test.cs" t="Include" />
         </e>
         <e p="Standard Assets" t="Include">
           <e p="2D" t="Include">
-            <e p="scripts" t="Include">
+            <e p="Scripts" t="Include">
               <e p="Camera2DFollow.cs" t="Include" />
               <e p="CameraFollow.cs" t="Include" />
               <e p="Platformer2DUserControl.cs" t="Include" />
@@ -200,7 +199,7 @@
           </e>
           <e p="CrossPlatformInput" t="Include">
             <e p="CrossPlatformInputGuidelines.txt" t="Include" />
-            <e p="scripts" t="Include">
+            <e p="Scripts" t="Include">
               <e p="AxisTouchButton.cs" t="Include" />
               <e p="ButtonHandler.cs" t="Include" />
               <e p="CrossPlatformInputManager.cs" t="Include" />
@@ -288,5 +287,6 @@
         <e p="bin" t="ExcludeRecursive" />
       </e>
     </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2017.3/resharper-host/local/Transient/ReSharperHost/v11/SolutionCaches/_DoNotFallTwice.-873931673.00" t="ExcludeRecursive" />
   </component>
 </project>
