@@ -425,47 +425,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25e8dd201f0ee2943af525a70dc8335a, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &327350010
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 327350011}
-  - component: {fileID: 327350012}
-  m_Layer: 0
-  m_Name: SoundObject
-  m_TagString: SoundPassingCar
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &327350011
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 327350010}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.77, y: 0.697, z: -0}
-  m_LocalScale: {x: 0.10093672, y: 0.12617058, z: 0.058345124}
-  m_Children: []
-  m_Father: {fileID: 644049534}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &327350012
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 327350010}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 20
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &534373836
 Prefab:
   m_ObjectHideFlags: 0
@@ -525,11 +484,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4689892683981046, guid: 8f1346f6eb66044eeb5044485d0a1020,
     type: 2}
   m_PrefabInternal: {fileID: 534373836}
---- !u!4 &644049534 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4348799455274222, guid: b237fa9df271b4cd1ac97e39c59d66aa,
-    type: 2}
-  m_PrefabInternal: {fileID: 883812351}
 --- !u!1 &688176737 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1878294005868180, guid: ba879a0402b86254bb20fecb61b79d07,
@@ -659,20 +613,6 @@ Prefab:
       propertyPath: Globalvars
       value: 
       objectReference: {fileID: 1874865247}
-    - target: {fileID: 114611542603215034, guid: b237fa9df271b4cd1ac97e39c59d66aa,
-        type: 2}
-      propertyPath: Speed
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1467201438974874, guid: b237fa9df271b4cd1ac97e39c59d66aa, type: 2}
-      propertyPath: m_TagString
-      value: Car
-      objectReference: {fileID: 0}
-    - target: {fileID: 65053912474590306, guid: b237fa9df271b4cd1ac97e39c59d66aa,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b237fa9df271b4cd1ac97e39c59d66aa, type: 2}
   m_IsPrefabParent: 0
@@ -1042,6 +982,11 @@ Prefab:
       propertyPath: drinkingSound
       value: 
       objectReference: {fileID: 8300000, guid: 0dc1d97b7bff0c84d80bea162e587f10, type: 3}
+    - target: {fileID: 114628096029311916, guid: 119666773651bfe468a4bb982de48c04,
+        type: 2}
+      propertyPath: alcool
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 119666773651bfe468a4bb982de48c04, type: 2}
   m_IsPrefabParent: 0
