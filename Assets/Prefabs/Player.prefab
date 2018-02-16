@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 135286481323093814}
   - component: {fileID: 23332102792059524}
   - component: {fileID: 114765778665696148}
+  - component: {fileID: 82555782668790742}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -74,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547138231482024}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 10.68, z: 2.5}
+  m_LocalPosition: {x: 0, y: 10.68, z: 3.63}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4688110618675118}
@@ -101,7 +102,7 @@ Transform:
   m_GameObject: {fileID: 1878294005868180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -8.7, z: -1.53}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.5965822, y: 3.5965822, z: 3.5965822}
   m_Children:
   - {fileID: 4040073830796126}
   - {fileID: 4215713111901522}
@@ -124,11 +125,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  near clip plane: 0.01
+  far clip plane: 10000
+  field of view: 99
+  orthographic: 1
+  orthographic size: 30
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -207,6 +208,86 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1547138231482024}
   m_Enabled: 1
+--- !u!82 &82555782668790742
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1878294005868180}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95552483914483330
 Animator:
   serializedVersion: 3
@@ -248,13 +329,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   z_Axe_Movement: 1
-  speed: 0.1
-  xMin: -5
-  xMax: 5
+  speed: 0.4
+  xMin: -30
+  xMax: 30
   globalvars: {fileID: 0}
-  endZDistance: 100
+  endZDistance: 1000
   remainingDistance: 0
   drunkMoveMult: 1.2
+  audioSrc: {fileID: 82555782668790742}
+  passingCars:
+  - {fileID: 8300000, guid: a4c82d1708cd1fc49a9b3abf8101c84e, type: 3}
+  - {fileID: 8300000, guid: 0bcb241fbb0fe584eba31b152365d69f, type: 3}
 --- !u!124 &124096831419019100
 Behaviour:
   m_ObjectHideFlags: 1

@@ -31,11 +31,14 @@ public class GameVars : MonoBehaviour
 	private AudioSource audioSrc;
 
 	public AudioClip deathSound;
+<<<<<<< HEAD
+	
+	public Animator simon;
+=======
 	public AudioClip collisonWithCarSound;
 
 	public AudioClip drinkingSound;
-
-	public Animator simon;
+>>>>>>> feature/soundDesign
 
 	
 	// Use this for initialization
@@ -49,7 +52,6 @@ public class GameVars : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-
 
 		myDrinkTime += Time.deltaTime;
 		myAlcoolLossTime += Time.deltaTime;
@@ -94,9 +96,16 @@ public class GameVars : MonoBehaviour
 		}
 
 	}
+<<<<<<< HEAD
+
+	
+	
+	public void fall()
+=======
 	
 	// fucking self-explanotory var
 	public void fall(bool carInvolvedInAccident)
+>>>>>>> feature/soundDesign
 	{
 		
 		
@@ -130,7 +139,7 @@ public class GameVars : MonoBehaviour
 
 	IEnumerator fallTimeout()
 	{
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(0.5f);
 		simon.SetBool("falling", false);
 	}
 
