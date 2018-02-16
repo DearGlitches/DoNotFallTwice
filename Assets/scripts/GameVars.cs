@@ -31,6 +31,8 @@ public class GameVars : MonoBehaviour
 	private AudioSource audioSrc;
 
 	public AudioClip deathSound;
+	
+	public Animator simon;
 
 	
 	// Use this for initialization
@@ -69,28 +71,32 @@ public class GameVars : MonoBehaviour
 			score += alcool > 0 ? alcool : 0;
 		}
 
-		if (alcool <= 0)
+		if (alcool < 0)
 		{
 			alcool = 0;
+		}
+		else if(alcool < 0.4f)
+		{
 			motion_blur_camera.GetComponent<PostProcessingBehaviour>().profile = notdrunk;
-		}else if (alcool > 0.4f)
+		}
+		else if (alcool < 0.7f)
 		{
 			motion_blur_camera.GetComponent<PostProcessingBehaviour>().profile = littledrunk;
 		}
-		else if (alcool > 0.7f)
+		else
 		{
 			motion_blur_camera.GetComponent<PostProcessingBehaviour>().profile = drunk;
 		}
 
-		
-		
-		
-
 	}
 
+	
+	
 	public void fall()
 	{
 
+		simon.SetBool("falling", true);
+		
 		
 		if (--health == 0)
 		{
@@ -104,7 +110,14 @@ public class GameVars : MonoBehaviour
 			audioSrc.PlayOneShot(clip, vol);
 		}
 		
+		StartCoroutine("fallTimeout");
 
+	}
+
+	IEnumerator fallTimeout()
+	{
+		yield return new WaitForSeconds(0.5f);
+		simon.SetBool("falling", false);
 	}
 
 	private void endGame()

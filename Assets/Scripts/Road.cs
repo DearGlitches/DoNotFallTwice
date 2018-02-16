@@ -43,6 +43,8 @@ public class Road : MonoBehaviour
 			}
 
 			obstacle.transform.localScale = transform.localScale;
+
+			
 			obstacle.transform.position = _roadPosition + new Vector3(_columnWidth * _column + _columnWidth/2, 2, _rowHeight * _row + _rowHeight/2);
 			obstacle.transform.parent = transform;
 			_obstacleGrid[_column, _row] = obstacle;

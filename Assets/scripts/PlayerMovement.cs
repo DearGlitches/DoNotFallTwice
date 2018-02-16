@@ -27,6 +27,10 @@ public class PlayerMovement : MonoBehaviour
 	private static bool haveNextNextGaussian;
 	private static double nextNextGaussian;
 	private float sigma = 0.4f; // sigma for random's walk gaussian
+
+	public Camera cameraPlayer; // used to sway camera while drunk
+	public GameObject player; // used to sway while drunk
+	public GameObject road; // used to sway while drunk
 	
 	
 	// Use this for initialization
@@ -55,6 +59,24 @@ public class PlayerMovement : MonoBehaviour
 			oldlRandomMove = randomMove;
 			float moveHorizontal = Input.GetAxis("Horizontal") + randomMove  * gameVars.alcool * drunkMoveMult;
 			// oldlMove = Mathf.Clamp(moveHorizontal, xMin, xMax);
+			
+			/*
+			 * Rotation, sway, drunk effect
+			 */
+			Quaternion targetPlayer = Quaternion.Euler(0, 0, 0);
+			Quaternion targetRoad = Quaternion.Euler(0, 0, 0);
+			if(moveHorizontal < 0){
+				targetPlayer = Quaternion.Euler(0, -10* gameVars.alcool, 0);
+				targetRoad = Quaternion.Euler(0, 0f, 0);
+			}else if (moveHorizontal > 0)
+			{
+				targetPlayer = Quaternion.Euler(0, 10* gameVars.alcool, 0);
+				targetRoad = Quaternion.Euler(0, -0f, 0);
+			}
+			transform.rotation = Quaternion.Slerp(transform.rotation, targetPlayer, Time.deltaTime * 1f);
+			road.transform.rotation = Quaternion.Slerp(road.transform.rotation, targetRoad, Time.deltaTime * 0.5f);
+			
+			//cameraPlayer.transform.localRotation.x = rotX * randomMove;
 		
 			Vector3 movement = new Vector3(moveHorizontal, 0.0f, z_Axe_Movement);
 			rigidbody.velocity = movement * speed;
