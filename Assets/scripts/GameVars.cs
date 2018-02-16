@@ -31,6 +31,8 @@ public class GameVars : MonoBehaviour
 	public AudioClip[] collisonSounds;
 	private AudioSource audioSrc;
 
+	public AudioClip deathSound;
+
 	
 	// Use this for initialization
 	void Start ()
@@ -89,14 +91,21 @@ public class GameVars : MonoBehaviour
 
 	public void fall()
 	{
-		AudioClip clip = collisonSounds[Random.Range(0, collisonSounds.Length - 1)];
-		float vol = Random.Range(0.2f, 0.5f);
-		audioSrc.PlayOneShot(clip, vol);
+
 		
 		if (--health == 0)
 		{
+			audioSrc.PlayOneShot(deathSound, 0.5f);
 			endGame();
 		}
+		else
+		{
+			AudioClip clip = collisonSounds[Random.Range(0, collisonSounds.Length - 1)];
+			float vol = Random.Range(0.2f, 0.5f);
+			audioSrc.PlayOneShot(clip, vol);
+		}
+		
+
 	}
 
 	private void endGame()
