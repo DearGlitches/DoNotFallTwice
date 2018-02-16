@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4689892683981046}
   - component: {fileID: 212317725830338752}
   - component: {fileID: 114198208410046668}
-  - component: {fileID: 61079085474174604}
+  - component: {fileID: 65367809258549796}
   m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
@@ -35,38 +35,25 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1535085311492904}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -10, z: 4.6}
+  m_LocalScale: {x: 1, y: 1, z: 0.30424416}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61079085474174604
-BoxCollider2D:
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!65 &65367809258549796
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1535085311492904}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.06624985}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 69.72, y: 98.31}
-    newSize: {x: 27.234375, y: 19.191406}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 69.72, y: 98.28922}
-  m_EdgeRadius: 0
+  m_Size: {x: 69.72, y: 98.31002, z: 0.20000005}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114198208410046668
 MonoBehaviour:
   m_ObjectHideFlags: 1

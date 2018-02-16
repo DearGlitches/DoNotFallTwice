@@ -41,7 +41,8 @@ public class Road : MonoBehaviour
 				_column = rnd.NextDouble() >= 0.5 ? 0 : NumberOfColumns - 1;
 			}
 
-			obstacle.transform.position = _roadPosition + new Vector3(_columnWidth * _column + _columnWidth/2, _rowHeight * _row + _rowHeight/2, -0.5f);
+			obstacle.transform.localScale = transform.localScale;
+			obstacle.transform.position = _roadPosition + new Vector3(_columnWidth * _column + _columnWidth/2, 2, _rowHeight * _row + _rowHeight/2);
 			_obstacleGrid[_column, _row] = obstacle;
 
 			_obstacles.Add(obstacle);
@@ -70,28 +71,28 @@ public class Road : MonoBehaviour
 	}
 
 	// Use this for initialization
-	void Start ()
+	void Awake ()
 	{
 		_obstacles = new List<GameObject>();
 		_obstacleGrid = new GameObject[NumberOfColumns, NumberOfRows];
 		var _sizeX = GetComponent<SpriteRenderer>().size.x;
 		var _sizeY = GetComponent<SpriteRenderer>().size.y;
-		var box = GetComponent<BoxCollider2D>();
+		var box = GetComponent<BoxCollider>();
 		_sizeX = box.size.x;
 		_sizeY = box.size.y;
 		_columnWidth = _sizeX / NumberOfColumns;
 		_rowHeight = _sizeY / NumberOfRows;
-		_roadPosition = transform.position - new Vector3(_sizeX/2, _sizeY/2, 0);
+		_roadPosition = transform.position - new Vector3(_sizeX/2, 0, _sizeY/2);
 		ChooseRandomObstacles();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey("return"))
+		/*if (Input.GetKey("return"))
 		{
 			DestroyObstacles();
 			ChooseRandomObstacles();
-		}
+		}*/
 	}
 
 	private void DestroyObstacles()
