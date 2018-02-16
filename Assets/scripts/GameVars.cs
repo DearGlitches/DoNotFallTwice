@@ -36,6 +36,10 @@ public class GameVars : MonoBehaviour
 	public AudioClip drinkingSound;
 
 	public Animator simon;
+	
+	public bool isInvicible = false;
+	private float invicibleEndTime = 0f;
+	private bool isFalling = false;
 
 	
 	// Use this for initialization
@@ -49,6 +53,17 @@ public class GameVars : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if (simon.GetBool("falling"))
+		{
+	/*		if (invicibleEndTime > Time.time)
+			{
+				isInvicible = false;
+				simon.SetBool("invincible", false);
+			}
+*/
+			alcool = 0;
+			return;
+		}
 
 
 		myDrinkTime += Time.deltaTime;
@@ -98,10 +113,15 @@ public class GameVars : MonoBehaviour
 	// fucking self-explanotory var
 	public void fall(bool carInvolvedInAccident)
 	{
-		
+		if (simon.GetBool("invincible"))
+		{
+			return;
+		}
 		
 
 		simon.SetBool("falling", true);
+		isFalling = true;
+
 		
 		
 		if (--health == 0)
@@ -123,15 +143,26 @@ public class GameVars : MonoBehaviour
 			}
 
 		}
-		
+		isInvicible = true;
 		StartCoroutine("fallTimeout");
+		
 
+	}
+
+	IEnumerator invincibleTimout()
+	{
+		Debug.Log("invincible Timout");
+		yield return new WaitForSeconds(1.5f);
+		simon.SetBool("invincible", false);
 	}
 
 	IEnumerator fallTimeout()
 	{
+		Debug.Log("FallTimeout");
 		yield return new WaitForSeconds(1f);
-		simon.SetBool("falling", false);
+		simon.SetBool("invincible", true);
+		simon.SetBool("falling", false);	
+		StartCoroutine("invincibleTimout");
 	}
 
 	private void endGame()
