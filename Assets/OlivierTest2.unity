@@ -402,9 +402,10 @@ MonoBehaviour:
   littledrunk: {fileID: 11400000, guid: 29e6171921e5c2e49878b051beb32c20, type: 2}
   drunk: {fileID: 11400000, guid: 45f302f02699b4243a7f033ee67e0230, type: 2}
   maxAlcool: 1
-  alcoolLossPerFrame: 0.005
+  alcoolLossPerTime: 0.05
   alcool: 1
   drinkDelta: 0.5
+  alcoolLossDelta: 0.1
   alcoolPerDrink: 0.3
   gameEnded: 0
 --- !u!4 &730084824

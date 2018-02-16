@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PostProcessing;
 
 public class GameVars : MonoBehaviour
 {
+	public Camera motion_blur_camera;
+	public PostProcessingProfile notdrunk;
+	public PostProcessingProfile littledrunk;
+	public PostProcessingProfile drunk;
+	
 	private int health = 2;
 	public float maxAlcool = 1f;
 	public float alcoolLossPerTime = 0.005f;
@@ -51,8 +57,19 @@ public class GameVars : MonoBehaviour
 
 		}
 
-		if (alcool < 0)
+		if (alcool <= 0)
+		{
 			alcool = 0;
+			motion_blur_camera.GetComponent<PostProcessingBehaviour>().profile = notdrunk;
+		}else if (alcool > 0.4f)
+		{
+			motion_blur_camera.GetComponent<PostProcessingBehaviour>().profile = littledrunk;
+		}
+		else if (alcool > 0.7f)
+		{
+			motion_blur_camera.GetComponent<PostProcessingBehaviour>().profile = drunk;
+		}
+
 		
 
 	}
