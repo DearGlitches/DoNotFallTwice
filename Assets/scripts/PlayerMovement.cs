@@ -27,7 +27,8 @@ public class PlayerMovement : MonoBehaviour
 	private static bool haveNextNextGaussian;
 	private static double nextNextGaussian;
 	private float sigma = 0.4f; // sigma for random's walk gaussian
-	
+	public AudioSource audioSrc;
+	public AudioClip[] passingCars;
 	
 	// Use this for initialization
 	void Start () {
@@ -114,6 +115,11 @@ public class PlayerMovement : MonoBehaviour
 		else if (other.CompareTag("Car"))
 		{
 			gameVars.fall(true);
+		} else if (other.CompareTag("SoundPassingCar"))
+		{
+			float vol = Random.Range(0.2f, 0.5f);
+			AudioClip clip = passingCars[Random.Range(0, passingCars.Length - 1)];
+			audioSrc.PlayOneShot(clip, vol);
 		}
 	}
 }
