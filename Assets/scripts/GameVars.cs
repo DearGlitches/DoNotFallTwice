@@ -36,16 +36,21 @@ public class GameVars : MonoBehaviour
 	public AudioClip drinkingSound;
 
 	public Animator simon;
+
+	public Texture BlackoutTexture;
 	
 	public bool isInvicible = false;
 	private float invicibleEndTime = 0f;
 	private bool isFalling = false;
+
+	private Color _previousGUIColor;
 
 	
 	// Use this for initialization
 	void Start ()
 	{
 		audioSrc = (AudioSource)gameObject.GetComponent<AudioSource>();
+		_previousGUIColor = GUI.color;
 		//alcool = 0f;
 		GameEnded = false;
 	}
@@ -115,7 +120,21 @@ public class GameVars : MonoBehaviour
 		}
 
 	}
-	
+
+	private void OnGUI()
+	{
+		if (alcool > 0.85)
+		{
+			_previousGUIColor = GUI.color;
+			GUI.color = new Color(0.0f, 0.0f, 0.0f, 0.95f);
+			GUI.DrawTexture(new Rect(0,0,10000,10000), BlackoutTexture, ScaleMode.ScaleToFit, true, 1.0f);
+		}
+		else
+		{
+			GUI.color = _previousGUIColor;
+		}
+	}
+
 	// fucking self-explanotory var
 	public void fall(bool carInvolvedInAccident)
 	{
