@@ -397,9 +397,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39d1e5ae46eb3d04d95acc7e7e180b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  motion_blur_camera: {fileID: 1333860518}
+  notdrunk: {fileID: 11400000, guid: 27b66e7d13572d84987b1d3595adbb22, type: 2}
+  littledrunk: {fileID: 11400000, guid: 29e6171921e5c2e49878b051beb32c20, type: 2}
+  drunk: {fileID: 11400000, guid: 45f302f02699b4243a7f033ee67e0230, type: 2}
   maxAlcool: 1
   alcoolLossPerFrame: 0.005
-  alcool: 0.5
+  alcool: 1
   drinkDelta: 0.5
   alcoolPerDrink: 0.3
 --- !u!4 &730084824
@@ -750,6 +754,7 @@ GameObject:
   - component: {fileID: 1333860518}
   - component: {fileID: 1333860517}
   - component: {fileID: 1333860516}
+  - component: {fileID: 1333860520}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -820,6 +825,18 @@ Transform:
   m_Father: {fileID: 2085162072}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1333860520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1333860515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 27b66e7d13572d84987b1d3595adbb22, type: 2}
 --- !u!1 &1361853757
 GameObject:
   m_ObjectHideFlags: 0
