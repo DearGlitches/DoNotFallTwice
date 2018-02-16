@@ -627,7 +627,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CarPrefab: {fileID: 1467201438974874, guid: b237fa9df271b4cd1ac97e39c59d66aa, type: 2}
   FrequencyOfCars: 5
-  BaseSpeed: 0
+  BaseSpeed: 0.616
   TopStart: {x: -14.5, y: -9.5, z: 1150}
   BottomStart: {x: 3.5, y: -9.5, z: -63}
   GlobalVars: {fileID: 1874865247}
@@ -1151,7 +1151,7 @@ Prefab:
     - target: {fileID: 114765778665696148, guid: ba879a0402b86254bb20fecb61b79d07,
         type: 2}
       propertyPath: speed
-      value: 0.4
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114765778665696148, guid: ba879a0402b86254bb20fecb61b79d07,
         type: 2}
@@ -1337,6 +1337,11 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: -0.00000006088905
       objectReference: {fileID: 0}
+    - target: {fileID: 114765778665696148, guid: ba879a0402b86254bb20fecb61b79d07,
+        type: 2}
+      propertyPath: simon
+      value: 
+      objectReference: {fileID: 129001842}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba879a0402b86254bb20fecb61b79d07, type: 2}
   m_IsPrefabParent: 0
