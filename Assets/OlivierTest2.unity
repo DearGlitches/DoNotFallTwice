@@ -470,7 +470,7 @@ MonoBehaviour:
   notdrunk: {fileID: 11400000, guid: 27b66e7d13572d84987b1d3595adbb22, type: 2}
   littledrunk: {fileID: 11400000, guid: 29e6171921e5c2e49878b051beb32c20, type: 2}
   drunk: {fileID: 11400000, guid: 45f302f02699b4243a7f033ee67e0230, type: 2}
-  health: 1
+  health: 2
   maxAlcool: 1
   alcoolLossPerTime: 0.025
   alcool: 1
