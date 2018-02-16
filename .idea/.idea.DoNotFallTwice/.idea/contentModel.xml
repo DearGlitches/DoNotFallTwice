@@ -179,6 +179,7 @@
         <e p="Scripts" t="Include">
           <e p="beer_fluidifier.cs" t="Include" />
           <e p="beerometer.cs" t="Include" />
+          <e p="Car.cs" t="Include" />
           <e p="GameVars.cs" t="Include" />
           <e p="PlayerMovement.cs" t="Include" />
           <e p="Road.cs" t="Include" />
