@@ -12,6 +12,7 @@ public class GameVars : MonoBehaviour
 	[SerializeField] private float alcoolPerDrink = 0.1f;	// alcohol per drink
 	private float myDrinkTime = 0.0f;
 	private float nextDrink = 0.5f;
+	public bool gameEnded = false;
 	
 
 	
@@ -53,6 +54,17 @@ public class GameVars : MonoBehaviour
 
 	private void endGame()
 	{
+		Debug.Log("gameOver");
 		Time.timeScale = 0;
+		gameEnded = true;
 	}
+
+	public void nextLevel()
+	{
+		Debug.Log("Next Level");
+		Time.timeScale = 0;
+		gameEnded = true;
+	}
+
+
 }
