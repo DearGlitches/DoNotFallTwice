@@ -4,14 +4,15 @@ using Random = System.Random;
 
 public class Road : MonoBehaviour
 {
-	[Range(5,20)]
-	public int NumberOfObstacles;
+	[Range(5, 20)]
+	public int NumberOfObstacles = 5;
 
-	[Range(4,20)]
-	public int NumberOfColumns;
+	private const int _numberOfColumns = 4;
+
+	[Range(4, 20)]
+	public int NumberOfRows = 4;
 	
-	[Range(4,20)]
-	public int NumberOfRows;
+	
 	private List<GameObject> _obstacles;
 	private GameObject[,] _obstacleGrid;
 	private Vector3 _roadPosition;
@@ -34,15 +35,16 @@ public class Road : MonoBehaviour
 		{
 			var obstacle = RandomObstacle(rnd.Next(5));
 			var _row = rnd.Next(NumberOfRows);
-			var _column = rnd.NextDouble() >= 0.5 ? 0 : NumberOfColumns - 1;
+			var _column = rnd.NextDouble() >= 0.5 ? 0 : _numberOfColumns - 1;
 			while (_obstacleGrid[_column, _row] != null)
 			{
 				_row = rnd.Next(NumberOfRows);
-				_column = rnd.NextDouble() >= 0.5 ? 0 : NumberOfColumns - 1;
+				_column = rnd.NextDouble() >= 0.5 ? 0 : _numberOfColumns - 1;
 			}
 
 			obstacle.transform.localScale = transform.localScale;
 			obstacle.transform.position = _roadPosition + new Vector3(_columnWidth * _column + _columnWidth/2, 2, _rowHeight * _row + _rowHeight/2);
+			obstacle.transform.parent = transform;
 			_obstacleGrid[_column, _row] = obstacle;
 
 			_obstacles.Add(obstacle);
@@ -74,13 +76,13 @@ public class Road : MonoBehaviour
 	void Awake ()
 	{
 		_obstacles = new List<GameObject>();
-		_obstacleGrid = new GameObject[NumberOfColumns, NumberOfRows];
+		_obstacleGrid = new GameObject[_numberOfColumns, NumberOfRows];
 		var _sizeX = GetComponent<SpriteRenderer>().size.x;
 		var _sizeY = GetComponent<SpriteRenderer>().size.y;
 		var box = GetComponent<BoxCollider>();
 		_sizeX = box.size.x;
 		_sizeY = box.size.y;
-		_columnWidth = _sizeX / NumberOfColumns;
+		_columnWidth = _sizeX / _numberOfColumns;
 		_rowHeight = _sizeY / NumberOfRows;
 		_roadPosition = transform.position - new Vector3(_sizeX/2, 0, _sizeY/2);
 		ChooseRandomObstacles();
