@@ -144,7 +144,7 @@ public class GameVars : MonoBehaviour
 		}
 		
 
-		simon.SetBool("falling", true);
+		
 		isFalling = true;
 
 		
@@ -156,6 +156,7 @@ public class GameVars : MonoBehaviour
 		}
 		else
 		{
+			simon.SetBool("falling", true);
 			float vol = Random.Range(0.2f, 0.5f);
 			if (carInvolvedInAccident)
 			{
@@ -202,7 +203,8 @@ public class GameVars : MonoBehaviour
 	IEnumerator deathTimeout()
 	{
 		Debug.Log("EndTimeout");
-		yield return new WaitForSeconds(1f);
+		simon.SetBool("isDead", true);
+		yield return new WaitForSeconds(3f);
 		PlayerPrefs.SetFloat("score", score);
 		PlayerPrefs.SetFloat("difficulty", difficulty);
 		SceneManager.LoadScene("GameOver");		
