@@ -68,17 +68,17 @@ public class PlayerMovement : MonoBehaviour
 			Quaternion targetRoad = Quaternion.Euler(0, 0, 0);
 			if(moveHorizontal < 0)
 			{
-				targetPlayer = Quaternion.Euler(90, -180, -180+30);
+				targetPlayer = Quaternion.Euler(90, -180, -180+80);
 				targetCamera = Quaternion.Euler(0, -10* gameVars.alcool, 0);
-				targetRoad = Quaternion.Euler(0, 0f, 0);
+				targetRoad = Quaternion.Euler(0, 0.5f, 0);
 			}
 			else if (moveHorizontal > 0)
 			{
-				targetPlayer = Quaternion.Euler(90, -180, -180-30);
+				targetPlayer = Quaternion.Euler(90, -180, -180-80);
 				targetCamera = Quaternion.Euler(0, 10* gameVars.alcool, 0);
-				targetRoad = Quaternion.Euler(0, -0f, 0);
+				targetRoad = Quaternion.Euler(0, -0.5f, 0);
 			}
-			player.transform.rotation = Quaternion.Slerp(player.transform.rotation, targetPlayer, Time.deltaTime * 1f);
+			player.transform.rotation = Quaternion.Slerp(player.transform.rotation, targetPlayer, Time.deltaTime * 0.1f);
 			transform.rotation = Quaternion.Slerp(transform.rotation, targetCamera, Time.deltaTime * 1f);
 			road.transform.rotation = Quaternion.Slerp(road.transform.rotation, targetRoad, Time.deltaTime * 0.5f);
 			
