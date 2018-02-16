@@ -51,7 +51,7 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 0
+    m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 0
   m_LightmapEditorSettings:
     serializedVersion: 9
@@ -315,13 +315,15 @@ Prefab:
       propertyPath: m_Name
       value: Road1
       objectReference: {fileID: 0}
-    - target: {fileID: 4689892683981046, guid: 8f1346f6eb66044eeb5044485d0a1020, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1
+    - target: {fileID: 114198208410046668, guid: 8f1346f6eb66044eeb5044485d0a1020,
+        type: 2}
+      propertyPath: NumberOfObstacles
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4689892683981046, guid: 8f1346f6eb66044eeb5044485d0a1020, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.30424428
+    - target: {fileID: 114198208410046668, guid: 8f1346f6eb66044eeb5044485d0a1020,
+        type: 2}
+      propertyPath: NumberOfRows
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f1346f6eb66044eeb5044485d0a1020, type: 2}
@@ -510,7 +512,7 @@ Prefab:
     - target: {fileID: 224797889311340854, guid: 25e8dd201f0ee2943af525a70dc8335a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 41.799988
+      value: 41.80005
       objectReference: {fileID: 0}
     - target: {fileID: 224716813820624180, guid: 25e8dd201f0ee2943af525a70dc8335a,
         type: 2}
@@ -521,6 +523,16 @@ Prefab:
         type: 2}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224018334920882346, guid: 25e8dd201f0ee2943af525a70dc8335a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 11.600098
+      objectReference: {fileID: 0}
+    - target: {fileID: 224733184290918190, guid: 25e8dd201f0ee2943af525a70dc8335a,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 11.600098
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25e8dd201f0ee2943af525a70dc8335a, type: 2}
@@ -1419,6 +1431,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.30424428
       objectReference: {fileID: 0}
+    - target: {fileID: 114198208410046668, guid: 8f1346f6eb66044eeb5044485d0a1020,
+        type: 2}
+      propertyPath: NumberOfObstacles
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114198208410046668, guid: 8f1346f6eb66044eeb5044485d0a1020,
+        type: 2}
+      propertyPath: NumberOfRows
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f1346f6eb66044eeb5044485d0a1020, type: 2}
   m_IsPrefabParent: 0
@@ -1540,6 +1562,16 @@ Prefab:
     - target: {fileID: 4689892683981046, guid: 8f1346f6eb66044eeb5044485d0a1020, type: 2}
       propertyPath: m_LocalScale.z
       value: 0.30424428
+      objectReference: {fileID: 0}
+    - target: {fileID: 114198208410046668, guid: 8f1346f6eb66044eeb5044485d0a1020,
+        type: 2}
+      propertyPath: NumberOfObstacles
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114198208410046668, guid: 8f1346f6eb66044eeb5044485d0a1020,
+        type: 2}
+      propertyPath: NumberOfRows
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f1346f6eb66044eeb5044485d0a1020, type: 2}

@@ -4,12 +4,12 @@ using Random = System.Random;
 
 public class Road : MonoBehaviour
 {
-	[Range(5, 20)]
-	public int NumberOfObstacles = 5;
+	[Range(1, 20)]
+	public int NumberOfObstacles = 1;
 
 	private const int _numberOfColumns = 4;
 
-	[Range(4, 20)]
+	[Range(1, 20)]
 	public int NumberOfRows = 4;
 	
 	
