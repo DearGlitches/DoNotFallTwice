@@ -23,7 +23,7 @@ public class Car : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		transform.position += MovingUp ? Vector3.forward * _realSpeed : Vector3.back * _realSpeed;
+		transform.position += MovingUp ? Vector3.forward * _realSpeed*Time.deltaTime : Vector3.back * _realSpeed*Time.deltaTime;
 
 	}
 }

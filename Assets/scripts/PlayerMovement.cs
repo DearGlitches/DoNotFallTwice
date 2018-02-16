@@ -33,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
 	public GameObject road; // used to sway while drunk
 	public AudioSource audioSrc;
 	public AudioClip[] passingCars;
+
+
 	
 	public Animator simon;
 	
@@ -47,8 +49,10 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
+
 		if (simon.GetBool("falling"))
 		{
+
 			rigidbody.velocity = new Vector3(0,0,0);
 		}
 		else if (!gameVars.GameEnded)
@@ -56,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
 			// end of the road back home
 			if (rigidbody.position.z >= endZDistance)
 			{
+
 				gameVars.nextLevel();
 			}
 
@@ -141,6 +146,11 @@ public class PlayerMovement : MonoBehaviour
 	// Use to check if Collison
 	private void OnTriggerEnter(Collider other)
 	{
+		if (simon.GetBool("falling") || simon.GetBool("invincible"))
+		{
+			Debug.Log("no trigge");
+			return;
+		}
 		// Debug.Log("collision");
 		if (other.CompareTag("Collision"))
 		{

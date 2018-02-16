@@ -131,7 +131,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: bc8d3814d9506e7439d00d4b4b8dcd6b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 98a516914f480d843af5199a9b23366d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.022
   m_Pitch: 1
@@ -233,3 +233,5 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 28d7796e1348fba4ead145f6df9d4ec3, type: 3}
   collisonWithCarSound: {fileID: 0}
   drinkingSound: {fileID: 8300000, guid: 0dc1d97b7bff0c84d80bea162e587f10, type: 3}
+  simon: {fileID: 0}
+  isInvicible: 0

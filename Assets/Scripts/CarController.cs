@@ -13,7 +13,7 @@ public class CarController : MonoBehaviour
 	[Range(5,15)]
 	public int FrequencyOfCars = 10;
 
-	[Range(0.0f,1.0f)]
+	[Range(0.0f,45.0f)]
 	public float BaseSpeed = 0.5f;
 
 	public Vector3 TopStart = new Vector3(-8f, -9.5f, 1150f);
