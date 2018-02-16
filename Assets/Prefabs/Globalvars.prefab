@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4906413396800926}
   - component: {fileID: 114628096029311916}
   - component: {fileID: 82476104027201392}
+  - component: {fileID: 82769290172572778}
   m_Layer: 0
   m_Name: Globalvars
   m_TagString: Untagged
@@ -121,6 +122,86 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!82 &82769290172572778
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213797897323004}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: bc8d3814d9506e7439d00d4b4b8dcd6b, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.022
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 134
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!114 &114628096029311916
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -139,7 +220,7 @@ MonoBehaviour:
   health: 2
   maxAlcool: 1
   alcoolLossPerTime: 0.025
-  alcool: 1
+  alcool: 0
   drinkDelta: 0.5
   alcoolLossDelta: 0.1
   alcoolPerDrink: 0.3
@@ -150,3 +231,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2cef83250b76aa149a11a20492a957a7, type: 3}
   - {fileID: 8300000, guid: 5188f0ea26906114a8fb1051de7169a7, type: 3}
   deathSound: {fileID: 8300000, guid: 28d7796e1348fba4ead145f6df9d4ec3, type: 3}
+  collisonWithCarSound: {fileID: 0}
+  drinkingSound: {fileID: 8300000, guid: 0dc1d97b7bff0c84d80bea162e587f10, type: 3}

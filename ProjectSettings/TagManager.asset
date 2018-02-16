@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collision
   - Car
+  - SoundPassingCar
   layers:
   - Default
   - TransparentFX

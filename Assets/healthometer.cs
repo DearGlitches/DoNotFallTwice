@@ -22,14 +22,18 @@ public class healthometer : MonoBehaviour
 	void Update () {
 		this.health = globalvars.GetComponent<GameVars>().health;
 		
+		Color white = Color.white;
+		Color black = Color.black;
+		black.a = 0.5f;
+		
 		if (health == 1)
 		{
 			this.health1.color = Color.white;
-			this.health2.color = Color.black;
+			this.health2.color = black;
 		}else if (health == 0)
 		{
-			this.health1.color = Color.black;
-			this.health2.color = Color.black;
+			this.health1.color = black;
+			this.health2.color = black;
 		}
 		else
 		{
