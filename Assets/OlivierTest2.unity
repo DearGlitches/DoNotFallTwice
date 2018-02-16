@@ -1526,6 +1526,7 @@ MonoBehaviour:
   score: {fileID: 634358139}
   distance: {fileID: 2132059953}
   globalvars: {fileID: 730084822}
+  player: {fileID: 2085162067}
 --- !u!1 &1831140502
 GameObject:
   m_ObjectHideFlags: 0
@@ -1783,6 +1784,7 @@ MonoBehaviour:
   xMax: 5
   globalvars: {fileID: 730084822}
   endZDistance: 100
+  remainingDistance: 0
   drunkMoveMult: 1.2
 --- !u!23 &2085162069
 MeshRenderer:

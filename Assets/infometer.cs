@@ -9,6 +9,7 @@ public class infometer : MonoBehaviour {
 	public Text distance;
 	
 	public GameObject globalvars;
+	public GameObject player;
 	
 	
 	
@@ -20,6 +21,7 @@ public class infometer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		this.score.text = globalvars.GetComponent<GameVars>().score.ToString("F0");
-		this.distance.text = "0"+" [m]";
+		//this.distance.text = "0"+" [m]";
+		this.distance.text = player.GetComponent<PlayerMovement>().remainingDistance.ToString("F0");
 	}
 }

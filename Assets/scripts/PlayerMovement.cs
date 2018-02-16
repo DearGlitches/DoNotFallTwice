@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
 	private GameVars gameVars;
 	public GameObject globalvars;
 	public float endZDistance = 100f;
+	public int remainingDistance = 0;
 	private float oldlRandomMove = 0f;
 	public float drunkMoveMult = 0.7f;
 	private float xRandomMin = -1f;	// min x random move for simon's walk
@@ -46,6 +47,8 @@ public class PlayerMovement : MonoBehaviour
 			{
 				gameVars.nextLevel();
 			}
+
+			remainingDistance = (int)(endZDistance - rigidbody.position.z);
 
 			// float moveHorizontal = Input.GetAxis("Horizontal") + (float)(Random.value - 0.5d)  * gameVars.alcool * drunkMoveMult;
 			float randomMove = gaussianRandom(sigma, oldlRandomMove);
