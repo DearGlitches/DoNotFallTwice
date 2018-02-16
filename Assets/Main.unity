@@ -1342,6 +1342,17 @@ Prefab:
       propertyPath: simon
       value: 
       objectReference: {fileID: 129001842}
+    - target: {fileID: 95552483914483330, guid: ba879a0402b86254bb20fecb61b79d07,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212402542091120410, guid: ba879a0402b86254bb20fecb61b79d07,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5726b40236b7e2c428d66d557c5bfcd2,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba879a0402b86254bb20fecb61b79d07, type: 2}
   m_IsPrefabParent: 0
