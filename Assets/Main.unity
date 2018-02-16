@@ -2301,18 +2301,6 @@ Prefab:
       objectReference: {fileID: 1548164628}
     - target: {fileID: 114628096029311916, guid: 119666773651bfe468a4bb982de48c04,
         type: 2}
-      propertyPath: littledrunk
-      value: 
-      objectReference: {fileID: 11400000, guid: 29e6171921e5c2e49878b051beb32c20,
-        type: 2}
-    - target: {fileID: 114628096029311916, guid: 119666773651bfe468a4bb982de48c04,
-        type: 2}
-      propertyPath: drunk
-      value: 
-      objectReference: {fileID: 11400000, guid: 45f302f02699b4243a7f033ee67e0230,
-        type: 2}
-    - target: {fileID: 114628096029311916, guid: 119666773651bfe468a4bb982de48c04,
-        type: 2}
       propertyPath: simon
       value: 
       objectReference: {fileID: 129001842}

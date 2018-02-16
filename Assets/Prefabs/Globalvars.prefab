@@ -233,3 +233,4 @@ MonoBehaviour:
   deathSound: {fileID: 8300000, guid: 28d7796e1348fba4ead145f6df9d4ec3, type: 3}
   collisonWithCarSound: {fileID: 0}
   drinkingSound: {fileID: 8300000, guid: 0dc1d97b7bff0c84d80bea162e587f10, type: 3}
+  simon: {fileID: 0}
