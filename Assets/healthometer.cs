@@ -20,6 +20,8 @@ public class healthometer : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
+		this.health = globalvars.GetComponent<GameVars>().health;
+		
 		if (health == 1)
 		{
 			this.health1.color = Color.white;
