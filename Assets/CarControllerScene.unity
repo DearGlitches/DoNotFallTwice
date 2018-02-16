@@ -603,10 +603,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarPrefab: {fileID: 1467201438974874, guid: b237fa9df271b4cd1ac97e39c59d66aa, type: 2}
-  NumberOfCars: 0
-  BaseSpeed: 0
-  TopStart: {x: -14.5, y: 2, z: 1150}
-  BottomStart: {x: 3.5, y: 2, z: -63}
+  FrequencyOfCars: 5
+  BaseSpeed: 0.5
+  TopStart: {x: -14.5, y: -8, z: 1150}
+  BottomStart: {x: 3.5, y: -8, z: -63}
   GlobalVars: {fileID: 1874865247}
 --- !u!1001 &960447145
 Prefab:

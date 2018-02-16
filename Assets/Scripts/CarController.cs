@@ -1,14 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CarController : MonoBehaviour
 {
 
 	public GameObject CarPrefab;
 	
-	[Range(0,10)]
-	public int NumberOfCars;
+	[Range(5,15)]
+	public int FrequencyOfCars;
 
 	[Range(0.0f,1.0f)]
 	public float BaseSpeed;
@@ -19,6 +21,10 @@ public class CarController : MonoBehaviour
 	public GameObject GlobalVars;
 
 	private List<GameObject> _cars;
+
+	private float _nextCarTime;
+
+	private const float EPSILON = 0.01f;
 	
 	
 	// Use this for initialization
@@ -26,6 +32,23 @@ public class CarController : MonoBehaviour
 		
 		_cars = new List<GameObject>();
 
+		LaunchCars();
+		
+
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
+		if (Math.Abs(_nextCarTime - Time.time) < EPSILON)
+		{
+			LaunchCars();
+		}
+		
+	}
+
+	private void LaunchCars()
+	{
 		var bottomCar = Instantiate(CarPrefab);
 		var topCar = Instantiate(CarPrefab);
 
@@ -42,10 +65,6 @@ public class CarController : MonoBehaviour
 		_cars.Add(bottomCar);
 		_cars.Add(topCar);
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		_nextCarTime = Time.time + Random.value + FrequencyOfCars;
 	}
 }
