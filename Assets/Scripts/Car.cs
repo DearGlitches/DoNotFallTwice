@@ -5,8 +5,8 @@ using UnityEngine;
 public class Car : MonoBehaviour
 {
 
-	public bool MovingUp;
-	public float Speed;
+	public bool MovingUp = true;
+	public float Speed = 0.5f;
 	private float _realSpeed;
 
 	private GameVars _gameVars;
@@ -15,9 +15,6 @@ public class Car : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-
-		MovingUp = MovingUp == null ? true : MovingUp;
-		Speed = Speed == null ? 0.5f : Speed;
 		
 		_gameVars = Globalvars.GetComponent<GameVars>();
 		_realSpeed = Speed * _gameVars.difficulty;

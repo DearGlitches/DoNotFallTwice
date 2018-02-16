@@ -70,17 +70,23 @@ public class PlayerMovement : MonoBehaviour
 			/*
 			 * Rotation, sway, drunk effect
 			 */
-			Quaternion targetPlayer = Quaternion.Euler(0, 0, 0);
+			Quaternion targetCamera = Quaternion.Euler(0, 0, 0);
+			Quaternion targetPlayer = Quaternion.Euler(90, -180, -180);
 			Quaternion targetRoad = Quaternion.Euler(0, 0, 0);
-			if(moveHorizontal < 0){
-				targetPlayer = Quaternion.Euler(0, -10* gameVars.alcool, 0);
-				targetRoad = Quaternion.Euler(0, 0f, 0);
-			}else if (moveHorizontal > 0)
+			if(moveHorizontal < 0)
 			{
-				targetPlayer = Quaternion.Euler(0, 10* gameVars.alcool, 0);
+				targetPlayer = Quaternion.Euler(90, -180, -180+30);
+				targetCamera = Quaternion.Euler(0, -10* gameVars.alcool, 0);
+				targetRoad = Quaternion.Euler(0, 0f, 0);
+			}
+			else if (moveHorizontal > 0)
+			{
+				targetPlayer = Quaternion.Euler(90, -180, -180-30);
+				targetCamera = Quaternion.Euler(0, 10* gameVars.alcool, 0);
 				targetRoad = Quaternion.Euler(0, -0f, 0);
 			}
-			transform.rotation = Quaternion.Slerp(transform.rotation, targetPlayer, Time.deltaTime * 1f);
+			player.transform.rotation = Quaternion.Slerp(player.transform.rotation, targetPlayer, Time.deltaTime * 1f);
+			transform.rotation = Quaternion.Slerp(transform.rotation, targetCamera, Time.deltaTime * 1f);
 			road.transform.rotation = Quaternion.Slerp(road.transform.rotation, targetRoad, Time.deltaTime * 0.5f);
 			
 			//cameraPlayer.transform.localRotation.x = rotX * randomMove;
