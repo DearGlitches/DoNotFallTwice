@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 	private static Random random = new Random();
 	private static bool haveNextNextGaussian;
 	private static double nextNextGaussian;
-	private float sigma = 0.4f;
+	private float sigma = 0.4f; // sigma for random's walk gaussian
 	
 	
 	// Use this for initialization
@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (!gameVars.gameEnded)
+		if (!gameVars.GameEnded)
 		{
 			// end of the road back home
 			if (rigidbody.position.z >= endZDistance)
