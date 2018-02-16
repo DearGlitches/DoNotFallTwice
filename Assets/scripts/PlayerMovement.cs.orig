@@ -27,14 +27,16 @@ public class PlayerMovement : MonoBehaviour
 	private static bool haveNextNextGaussian;
 	private static double nextNextGaussian;
 	private float sigma = 0.4f; // sigma for random's walk gaussian
+<<<<<<< HEAD
 
 	public Camera cameraPlayer; // used to sway camera while drunk
 	public GameObject player; // used to sway while drunk
 	public GameObject road; // used to sway while drunk
+	
+=======
 	public AudioSource audioSrc;
 	public AudioClip[] passingCars;
-	
-	public Animator simon;
+>>>>>>> feature/soundDesign
 	
 	// Use this for initialization
 	void Start () {
@@ -47,11 +49,7 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (simon.GetBool("falling"))
-		{
-			rigidbody.velocity = new Vector3(0,0,0);
-		}
-		else if (!gameVars.GameEnded)
+		if (!gameVars.GameEnded)
 		{
 			// end of the road back home
 			if (rigidbody.position.z >= endZDistance)
@@ -85,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 			
 			//cameraPlayer.transform.localRotation.x = rotX * randomMove;
 		
-			Vector3 movement = new Vector3(moveHorizontal*Time.deltaTime, 0.0f, z_Axe_Movement*Time.deltaTime);
+			Vector3 movement = new Vector3(moveHorizontal, 0.0f, z_Axe_Movement);
 			rigidbody.velocity = movement * speed;
 		
 			rigidbody.position = new Vector3(
