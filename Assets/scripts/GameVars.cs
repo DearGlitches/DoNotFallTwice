@@ -12,7 +12,7 @@ public class GameVars : MonoBehaviour
 	public PostProcessingProfile littledrunk;
 	public PostProcessingProfile drunk;
 	
-	private int health = 2;
+	public int health = 2;
 	public float maxAlcool = 1f;
 	public float alcoolLossPerTime = 0.005f;
 	public float alcool;
