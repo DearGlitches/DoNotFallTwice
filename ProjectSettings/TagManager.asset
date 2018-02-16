@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Collision
+  - Car
   layers:
   - Default
   - TransparentFX
