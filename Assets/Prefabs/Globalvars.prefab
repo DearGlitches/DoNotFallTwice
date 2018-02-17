@@ -64,7 +64,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -72,20 +72,20 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
-      time: 0
+      time: 0.002
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
     - serializedVersion: 2
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      time: 0.9895935
+      value: 0.9925537
+      inSlope: -0.10784001
+      outSlope: -0.10784001
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -131,9 +131,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 98a516914f480d843af5199a9b23366d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bc8d3814d9506e7439d00d4b4b8dcd6b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.022
+  m_Volume: 0.031
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -227,13 +227,13 @@ MonoBehaviour:
   score: 0
   difficulty: 1
   collisonSounds:
-  - {fileID: 8300000, guid: 8d963b7d5700db14aaef17838bffaab1, type: 3}
-  - {fileID: 8300000, guid: 2cef83250b76aa149a11a20492a957a7, type: 3}
-  - {fileID: 8300000, guid: 5188f0ea26906114a8fb1051de7169a7, type: 3}
-  deathSound: {fileID: 8300000, guid: 28d7796e1348fba4ead145f6df9d4ec3, type: 3}
+  - {fileID: 8300000, guid: cbc4698fb12049144a440b5a81659a6c, type: 3}
+  - {fileID: 8300000, guid: cf580fbf18771a0428f335845af49a78, type: 3}
+  - {fileID: 8300000, guid: 9584eaa47c4048e4ab970f6548771cce, type: 3}
+  deathSound: {fileID: 8300000, guid: 5f17666c88ef7634c961c23c68066236, type: 3}
   collisonWithCarSound: {fileID: 8300000, guid: ba256b57c35f96b4c993aea4ce86920f,
     type: 3}
-  drinkingSound: {fileID: 8300000, guid: 0dc1d97b7bff0c84d80bea162e587f10, type: 3}
+  drinkingSound: {fileID: 8300000, guid: d67eee0cae68a9c45bf05684ac4ce03e, type: 3}
   simon: {fileID: 0}
   BlackoutTexture: {fileID: 8600000, guid: 88bbd1b9c5bba4948b54898f23cc8d85, type: 2}
   isInvicible: 0

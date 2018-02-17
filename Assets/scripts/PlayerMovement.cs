@@ -170,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
 			gameVars.fall(true);
 		} else if (other.CompareTag("SoundPassingCar"))
 		{
-			float vol = Random.Range(0.4f, 1f);
+			float vol = Random.Range(0.2f, 0.6f);
 			AudioClip clip = passingCars[Random.Range(0, passingCars.Length - 1)];
 			audioSrc.PlayOneShot(clip, vol);
 		}
