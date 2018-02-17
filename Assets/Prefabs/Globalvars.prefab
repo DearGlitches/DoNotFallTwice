@@ -133,7 +133,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: bc8d3814d9506e7439d00d4b4b8dcd6b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.031
+  m_Volume: 0.478
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -217,6 +217,7 @@ MonoBehaviour:
   notdrunk: {fileID: 11400000, guid: 27b66e7d13572d84987b1d3595adbb22, type: 2}
   littledrunk: {fileID: 11400000, guid: 29e6171921e5c2e49878b051beb32c20, type: 2}
   drunk: {fileID: 11400000, guid: 45f302f02699b4243a7f033ee67e0230, type: 2}
+  drunk_info: {fileID: 0}
   health: 2
   maxAlcool: 1
   alcoolLossPerTime: 0.025
@@ -224,8 +225,9 @@ MonoBehaviour:
   drinkDelta: 0.5
   alcoolLossDelta: 0.1
   alcoolPerDrink: 0.3
+  level: 0
   score: 0
-  difficulty: 1
+  difficulty: 0
   collisonSounds:
   - {fileID: 8300000, guid: cbc4698fb12049144a440b5a81659a6c, type: 3}
   - {fileID: 8300000, guid: cf580fbf18771a0428f335845af49a78, type: 3}
