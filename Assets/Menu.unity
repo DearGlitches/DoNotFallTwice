@@ -136,7 +136,7 @@ VideoPlayer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 161497612}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: e5a75a9f6f9d66e438997ef594a1a044, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: d4e21c87978cc234ca66f7f938db2e7f, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -265,6 +265,7 @@ MonoBehaviour:
   start: {fileID: 1386819692}
   tutorial: {fileID: 0}
   exit: {fileID: 1659374879}
+  baseDifficulty: 0.6
   menu: {fileID: 0}
 --- !u!4 &611656866
 Transform:

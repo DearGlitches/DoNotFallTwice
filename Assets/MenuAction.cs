@@ -10,6 +10,7 @@ public class MenuAction : MonoBehaviour
 	public Button start;
 	public Button tutorial;
 	public Button exit;
+	public float baseDifficulty = 0.8f; // should be change in GameOver.cs as well 
 
 	public GameObject menu;
 	
@@ -20,6 +21,8 @@ public class MenuAction : MonoBehaviour
 	
 	void StartGame()
 	{
+		PlayerPrefs.SetFloat("score", 0f);
+		PlayerPrefs.SetFloat("difficulty", baseDifficulty);
 		SceneManager.LoadScene("Main");
 	}
 	

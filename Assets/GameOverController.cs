@@ -10,6 +10,7 @@ public class GameOverController : MonoBehaviour
 	public Text score;
 	public Button restartBtn;
 	public Button menuBtn;
+	public float baseDifficulty = 0.8f;
 
 	// Use this for initialization
 	void Start ()
@@ -26,11 +27,15 @@ public class GameOverController : MonoBehaviour
 
 	void restart()
 	{
+		PlayerPrefs.SetInt("score", 0);
+		PlayerPrefs.SetFloat("difficulty", baseDifficulty);
 		SceneManager.LoadScene("Main");
 	}
 
 	void menu()
 	{
+		PlayerPrefs.SetInt("score", 0);
+		PlayerPrefs.SetFloat("difficulty", baseDifficulty);
 		SceneManager.LoadScene("Menu");
 	}
 }
