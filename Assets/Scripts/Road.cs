@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = System.Random;
 
@@ -77,6 +78,9 @@ public class Road : MonoBehaviour
 	// Use this for initialization
 	void Awake ()
 	{
+		NumberOfRows = (int) Math.Floor(NumberOfRows * PlayerPrefs.GetFloat("difficulty"));
+		NumberOfObstacles = (int) Math.Floor(NumberOfObstacles * PlayerPrefs.GetFloat("difficulty"));
+		Debug.Log("Number of rows: " + NumberOfRows);
 		_obstacles = new List<GameObject>();
 		_obstacleGrid = new GameObject[_numberOfColumns, NumberOfRows];
 		var _sizeX = GetComponent<SpriteRenderer>().size.x;
@@ -88,6 +92,7 @@ public class Road : MonoBehaviour
 		_rowHeight = _sizeY / NumberOfRows;
 		_roadPosition = transform.position - new Vector3(_sizeX/2, 0, _sizeY/2);
 		ChooseRandomObstacles();
+		
 	}
 	
 	// Update is called once per frame
