@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PostProcessing;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 
 public class GameVars : MonoBehaviour
@@ -11,6 +12,11 @@ public class GameVars : MonoBehaviour
 	public PostProcessingProfile notdrunk;
 	public PostProcessingProfile littledrunk;
 	public PostProcessingProfile drunk;
+
+	public Text drunk_info;
+	private Color drunk_info_color;
+	private int info_text_selector = 0;
+	private string[] drunk_info_text;
 	
 	public int health = 1;
 	public float maxAlcool = 1f;
@@ -57,10 +63,14 @@ public class GameVars : MonoBehaviour
 		_previousGUIColor = GUI.color;
 		//alcool = 0f;
 		GameEnded = false;
+
 		score = PlayerPrefs.GetFloat("score");
 		difficulty = PlayerPrefs.GetFloat("difficulty");
 		level = PlayerPrefs.GetInt("level");
 		Debug.Log(difficulty);
+
+		drunk_info_text = new string[] {"MMH BEER!", ".. #! .. OUH ..", "Bit D d D D Drunken", "Does anyone have a beer?"};
+		info_text_selector = 0;
 	}
 
 	/*private void Awake()
@@ -110,6 +120,10 @@ public class GameVars : MonoBehaviour
 			score += alcool > 0 ? alcool : 0;
 		}
 
+
+		drunk_info_color = drunk_info.color;
+		
+		
 		if (alcool < 0)
 		{
 			alcool = 0;
@@ -117,10 +131,15 @@ public class GameVars : MonoBehaviour
 		else if(alcool < 0.4f)
 		{
 			motion_blur_camera.GetComponent<PostProcessingBehaviour>().profile = notdrunk;
+			drunk_info.text = "";
+			Debug.Log(drunk_info_text.Length);
+			info_text_selector = (int)(Random.value * (drunk_info_text.Length-1));
+			Color.Lerp(drunk_info_color, Color.black, 2f);
 		}
 		else if (alcool < 0.7f)
 		{
-			motion_blur_camera.GetComponent<PostProcessingBehaviour>().profile = littledrunk;
+			motion_blur_camera.GetComponent<PostProcessingBehaviour>().profile = littledrunk;	
+			drunk_info.text = drunk_info_text[info_text_selector];		
 		}
 		else
 		{

@@ -762,16 +762,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114985164122804308, guid: 25e8dd201f0ee2943af525a70dc8335a,
-        type: 2}
-      propertyPath: globalvars
-      value: 
-      objectReference: {fileID: 1874865247}
-    - target: {fileID: 114202892061111744, guid: 25e8dd201f0ee2943af525a70dc8335a,
-        type: 2}
-      propertyPath: globalvars
-      value: 
-      objectReference: {fileID: 1874865247}
     - target: {fileID: 114893314864294774, guid: 25e8dd201f0ee2943af525a70dc8335a,
         type: 2}
       propertyPath: globalvars
@@ -782,55 +772,30 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 688176737}
-    - target: {fileID: 224797889311340854, guid: 25e8dd201f0ee2943af525a70dc8335a,
+    - target: {fileID: 114202892061111744, guid: 25e8dd201f0ee2943af525a70dc8335a,
         type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -52.19995
-      objectReference: {fileID: 0}
-    - target: {fileID: 224797889311340854, guid: 25e8dd201f0ee2943af525a70dc8335a,
+      propertyPath: globalvars
+      value: 
+      objectReference: {fileID: 1874865247}
+    - target: {fileID: 114985164122804308, guid: 25e8dd201f0ee2943af525a70dc8335a,
         type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 41.80005
-      objectReference: {fileID: 0}
-    - target: {fileID: 224716813820624180, guid: 25e8dd201f0ee2943af525a70dc8335a,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 43.19995
-      objectReference: {fileID: 0}
-    - target: {fileID: 114730071478890290, guid: 25e8dd201f0ee2943af525a70dc8335a,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224018334920882346, guid: 25e8dd201f0ee2943af525a70dc8335a,
+      propertyPath: globalvars
+      value: 
+      objectReference: {fileID: 1874865247}
+    - target: {fileID: 224047964156520848, guid: 25e8dd201f0ee2943af525a70dc8335a,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 11.600098
+      value: -154.2
       objectReference: {fileID: 0}
-    - target: {fileID: 224733184290918190, guid: 25e8dd201f0ee2943af525a70dc8335a,
+    - target: {fileID: 114353832193388588, guid: 25e8dd201f0ee2943af525a70dc8335a,
         type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 11.600098
+      propertyPath: m_FontData.m_FontSize
+      value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 114709281428903644, guid: 25e8dd201f0ee2943af525a70dc8335a,
+    - target: {fileID: 114353832193388588, guid: 25e8dd201f0ee2943af525a70dc8335a,
         type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114709281428903644, guid: 25e8dd201f0ee2943af525a70dc8335a,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114709281428903644, guid: 25e8dd201f0ee2943af525a70dc8335a,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114709281428903644, guid: 25e8dd201f0ee2943af525a70dc8335a,
-        type: 2}
-      propertyPath: m_Color.a
-      value: 0.641
+      propertyPath: m_FontData.m_MinSize
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25e8dd201f0ee2943af525a70dc8335a, type: 2}
@@ -1076,6 +1041,12 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &470247107 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114353832193388588, guid: 25e8dd201f0ee2943af525a70dc8335a,
+    type: 2}
+  m_PrefabInternal: {fileID: 268919192}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &474150390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2068,6 +2039,9 @@ Prefab:
       propertyPath: difficulty
       value: 0
       objectReference: {fileID: 0}
+      propertyPath: drunk_info
+      value: 
+      objectReference: {fileID: 470247107}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 119666773651bfe468a4bb982de48c04, type: 2}
   m_IsPrefabParent: 0
