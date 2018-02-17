@@ -70,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
 			float randomMove = gaussianRandom(sigma, oldlRandomMove);
 			oldlRandomMove = randomMove;
 			float moveHorizontal = Input.GetAxis("Horizontal") + randomMove  * gameVars.alcool * drunkMoveMult;
+			float verticalMovement = Input.GetAxis("Vertical");
 			// oldlMove = Mathf.Clamp(moveHorizontal, xMin, xMax);
 			
 			/*
@@ -98,12 +99,20 @@ public class PlayerMovement : MonoBehaviour
 			//cameraPlayer.transform.localRotation.x = rotX * randomMove;
 		
 			Vector3 movement = new Vector3(moveHorizontal*Time.deltaTime, 0.0f, z_Axe_Movement*Time.deltaTime);
+			if (verticalMovement < 0)
+			{
+				movement.z -= 0.01f;
+			}
 			rigidbody.velocity = movement * speed;
 		
 			rigidbody.position = new Vector3(
 				Mathf.Clamp(rigidbody.position.x + movement.x*speed, xMin, xMax),
 				-10f,
 				rigidbody.position.z + movement.z* speed);
+
+			
+
+			
 		}
 
 
