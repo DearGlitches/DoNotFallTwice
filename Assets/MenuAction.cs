@@ -20,7 +20,11 @@ public class MenuAction : MonoBehaviour
 		start.onClick.AddListener(StartGame);
 		exit.onClick.AddListener(ExitGame);
 		title.CrossFadeAlpha(0.0f, 3.5f, false);
-		Destroy(title, 3.5f);
+		if(PlayerPrefs.GetInt("menu_title")==1)
+			Destroy(title);
+		else
+			Destroy(title, 3.5f);
+		PlayerPrefs.SetInt("menu_title", 1);
 	}
 	
 	void StartGame()

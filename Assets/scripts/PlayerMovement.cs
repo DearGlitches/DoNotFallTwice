@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
 		rigidbody = GetComponent<Rigidbody>();
 		
 		gameVars = globalvars.GetComponent<GameVars>();
-		Debug.Log("testing console");
+		// Debug.Log("testing console");
 
 		waitSecondsBeforeStartTimer = Time.time + waitSecondsBeforeStart;
 	}
@@ -163,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
 	{
 		if (simon.GetBool("falling") || simon.GetBool("invincible"))
 		{
-			Debug.Log("no trigge");
+			//Debug.Log("no trigge");
 			return;
 		}
 		// Debug.Log("collision");

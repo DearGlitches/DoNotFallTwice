@@ -80,7 +80,7 @@ public class Road : MonoBehaviour
 	{
 		NumberOfRows = (int) Math.Floor(NumberOfRows * PlayerPrefs.GetFloat("difficulty"));
 		NumberOfObstacles = (int) Math.Floor(NumberOfObstacles * PlayerPrefs.GetFloat("difficulty"));
-		Debug.Log("Number of rows: " + NumberOfRows);
+		// Debug.Log("Number of rows: " + NumberOfRows);
 		_obstacles = new List<GameObject>();
 		_obstacleGrid = new GameObject[_numberOfColumns, NumberOfRows];
 		var _sizeX = GetComponent<SpriteRenderer>().size.x;
