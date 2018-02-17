@@ -70,7 +70,7 @@ public class GameVars : MonoBehaviour
 		score = PlayerPrefs.GetFloat("score");
 		difficulty = PlayerPrefs.GetFloat("difficulty");
 		level = PlayerPrefs.GetInt("level");
-		Debug.Log(difficulty);
+		Debug.Log("difficulty: "+ difficulty);
 
 		drunk_info_text = new string[] {"MMH BEER!", ".. #! .. OUH ..", "Bit D d D D Drunken", "Does anyone have a beer?"};
 		info_text_selector = 0;
@@ -214,14 +214,14 @@ public class GameVars : MonoBehaviour
 
 	IEnumerator invincibleTimout()
 	{
-		Debug.Log("invincible Timout");
+		// Debug.Log("invincible Timout");
 		yield return new WaitForSeconds(1.5f);
 		simon.SetBool("invincible", false);
 	}
 
 	IEnumerator fallTimeout()
 	{
-		Debug.Log("FallTimeout");
+		// Debug.Log("FallTimeout");
 		yield return new WaitForSeconds(1f);
 		simon.SetBool("invincible", true);
 		simon.SetBool("falling", false);	
@@ -230,8 +230,8 @@ public class GameVars : MonoBehaviour
 
 	private void endGame()
 	{
-		Debug.Log("gameOver");
-		Debug.Log("Score: " + score);
+		// Debug.Log("gameOver");
+		// Debug.Log("Score: " + score);
 		StartCoroutine("deathTimeout");
 		//Time.timeScale = 0;
 		GameEnded = true;
@@ -239,7 +239,7 @@ public class GameVars : MonoBehaviour
 
 	IEnumerator deathTimeout()
 	{
-		Debug.Log("EndTimeout");
+		// Debug.Log("EndTimeout");
 		simon.SetBool("isDead", true);
 		yield return new WaitForSeconds(3f);
 		PlayerPrefs.SetFloat("score", score);
@@ -249,8 +249,8 @@ public class GameVars : MonoBehaviour
 
 	public void nextLevel()
 	{
-		Debug.Log("Next Level");
-		Debug.Log("Score: " + score);
+		// Debug.Log("Next Level");
+		// Debug.Log("Score: " + score);
 		// Time.timeScale = 0;
 		GameEnded = true;
 		PlayerPrefs.SetFloat("score", score);
