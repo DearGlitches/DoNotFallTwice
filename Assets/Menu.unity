@@ -265,7 +265,6 @@ MonoBehaviour:
   start: {fileID: 1386819692}
   tutorial: {fileID: 0}
   exit: {fileID: 1659374879}
-  baseDifficulty: 0.6
   menu: {fileID: 0}
 --- !u!4 &611656866
 Transform:
