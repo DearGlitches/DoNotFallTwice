@@ -8,16 +8,21 @@ public class MenuAction : MonoBehaviour
 {
 
 	public Button start;
-	public Button tutorial;
+	public Button score;
 	public Button exit;
 	private float baseDifficulty = 0.7f; // should be change in GameOverController.cs as well 
+
+	public Image title;
 
 	public GameObject menu;
 	
 	// Use this for initialization
 	void Start () {
 		start.onClick.AddListener(StartGame);
+		score.onClick.AddListener(HighScore);
 		exit.onClick.AddListener(ExitGame);
+		title.CrossFadeAlpha(0.0f, 3.5f, false);
+		Destroy(title, 3.5f);
 	}
 	
 	void StartGame()
@@ -28,13 +33,9 @@ public class MenuAction : MonoBehaviour
 		SceneManager.LoadScene("Main");
 	}
 	
-	void Tutorial()
+	void HighScore()
 	{
-		Vector3 pos = menu.GetComponent<RectTransform>().localPosition;
-		pos.x -= 100f;
-		menu.GetComponent<RectTransform>().localPosition = new Vector3(-100,0,0);
-		//Vector3 menuPlacement = this.menu.gameObject.GetComponent<RectTransform>().position;
-		//menuPlacement = new Vector3(-50*Time.deltaTime, 0.0f, 0.0f);
+		SceneManager.LoadScene("Highscore");
 	}
 	
 	void ExitGame()

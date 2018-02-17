@@ -35,9 +35,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1535085311492904}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -10, z: 4.6}
-  m_LocalScale: {x: 1, y: 1, z: 0.30424416}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 56.526524, y: 31.625, z: -33.247025}
+  m_LocalScale: {x: 1, y: 1, z: 0.30424428}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -65,9 +65,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc90605e441fb4643a156245b4716ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfObstacles: 5
-  NumberOfColumns: 4
-  NumberOfRows: 6
+  NumberOfObstacles: 1
+  NumberOfRows: 2
   BinPrefab: {fileID: 1299455723960294, guid: e8f1629b488cf4f2aa70e940af44ec89, type: 2}
   RedBarrierPrefab: {fileID: 1601071972772788, guid: 95550d47753984f7fac4b82621a2737c,
     type: 2}
@@ -109,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9d2c6dedc555c49e094732f13ed276cd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 227f4f85abc700b49ae8c72c7c6bcb3c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
