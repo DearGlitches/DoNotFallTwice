@@ -124,19 +124,7 @@ public class GameVars : MonoBehaviour
 	private void OnGUI()
 	{
 		
-		if (alcool > 0.65f && alcool <= 0.75f)
-		{
-			_previousGUIColor = GUI.color;
-			GUI.color = new Color(0.0f, 0.0f, 0.0f, alcool);
-			GUI.DrawTexture(new Rect(0,0,10000,10000), BlackoutTexture, ScaleMode.ScaleToFit, true, 1.0f);
-		}
-		else if (alcool > 0.75f && alcool <= 0.85f)
-		{
-			_previousGUIColor = GUI.color;
-			GUI.color = new Color(0.0f, 0.0f, 0.0f, alcool);
-			GUI.DrawTexture(new Rect(0,0,10000,10000), BlackoutTexture, ScaleMode.ScaleToFit, true, 1.0f);
-		}
-		else if (alcool > 0.85f)
+		if (alcool > 0.65f)
 		{
 			_previousGUIColor = GUI.color;
 			GUI.color = new Color(0.0f, 0.0f, 0.0f, alcool);

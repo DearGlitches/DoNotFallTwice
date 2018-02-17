@@ -231,7 +231,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2cef83250b76aa149a11a20492a957a7, type: 3}
   - {fileID: 8300000, guid: 5188f0ea26906114a8fb1051de7169a7, type: 3}
   deathSound: {fileID: 8300000, guid: 28d7796e1348fba4ead145f6df9d4ec3, type: 3}
-  collisonWithCarSound: {fileID: 0}
+  collisonWithCarSound: {fileID: 8300000, guid: ba256b57c35f96b4c993aea4ce86920f,
+    type: 3}
   drinkingSound: {fileID: 8300000, guid: 0dc1d97b7bff0c84d80bea162e587f10, type: 3}
   simon: {fileID: 0}
   BlackoutTexture: {fileID: 8600000, guid: 88bbd1b9c5bba4948b54898f23cc8d85, type: 2}
