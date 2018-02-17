@@ -2063,6 +2063,11 @@ Prefab:
       propertyPath: m_Volume
       value: 0.478
       objectReference: {fileID: 0}
+    - target: {fileID: 114628096029311916, guid: 119666773651bfe468a4bb982de48c04,
+        type: 2}
+      propertyPath: difficulty
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 119666773651bfe468a4bb982de48c04, type: 2}
   m_IsPrefabParent: 0

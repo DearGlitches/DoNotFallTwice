@@ -24,8 +24,11 @@ public class GameVars : MonoBehaviour
 	private float nextDrink = 0.5f;	// used to store the next minimum time for a drink
 	private float nextLoss = 0.1f;	// used to store the next minimum time for an alcool loss
 	public bool GameEnded { get; private set; }
-	public float score = 0f;
-	public float difficulty = 1f;	// game difficulty, used to change car speed
+
+	// vars dependant of level don't set them
+	public int level;
+	public float score;
+	public float difficulty;	// game difficulty, used to change car speed
 
 	public AudioClip[] collisonSounds;
 	private AudioSource audioSrc;
@@ -49,10 +52,15 @@ public class GameVars : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		
 		audioSrc = (AudioSource)gameObject.GetComponent<AudioSource>();
 		_previousGUIColor = GUI.color;
 		//alcool = 0f;
 		GameEnded = false;
+		score = PlayerPrefs.GetFloat("score");
+		difficulty = PlayerPrefs.GetFloat("difficulty");
+		level = PlayerPrefs.GetInt("level");
+		Debug.Log(difficulty);
 	}
 
 	/*private void Awake()
@@ -217,6 +225,9 @@ public class GameVars : MonoBehaviour
 		Debug.Log("Score: " + score);
 		// Time.timeScale = 0;
 		GameEnded = true;
+		PlayerPrefs.SetFloat("score", score);
+		PlayerPrefs.SetFloat("difficulty", difficulty*1.2f);
+		PlayerPrefs.SetInt("level", level+1);
 		SceneManager.LoadScene("Main");
 	}
 

@@ -7,9 +7,10 @@ public class GameOver : MonoBehaviour {
 	float timer = 0;
 	private float finalScore;
 
+
 	// Use this for initialization
 	void Start () {
-		finalScore = PlayerPrefs.GetInt("Player Score");
+		finalScore = PlayerPrefs.GetInt("score");
 	}
 	
 	// Update is called once per frame
