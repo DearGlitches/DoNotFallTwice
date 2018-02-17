@@ -91,6 +91,12 @@ public class GameVars : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+
+		if (Input.GetKey(KeyCode.Escape))
+		{
+			SceneManager.LoadScene("Menu");
+		}
+		
 		if (simon.GetBool("falling"))
 		{
 	/*		if (invicibleEndTime > Time.time)
