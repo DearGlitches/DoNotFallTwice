@@ -2069,6 +2069,11 @@ Prefab:
       propertyPath: simon
       value: 
       objectReference: {fileID: 129001842}
+    - target: {fileID: 114628096029311916, guid: 119666773651bfe468a4bb982de48c04,
+        type: 2}
+      propertyPath: BlackoutTexture
+      value: 
+      objectReference: {fileID: 8600000, guid: 88bbd1b9c5bba4948b54898f23cc8d85, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 119666773651bfe468a4bb982de48c04, type: 2}
   m_IsPrefabParent: 0
