@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using JetBrains.Annotations;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -22,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
 	public float drunkMoveMult = 0.7f;
 	private float xRandomMin = -1f;	// min x random move for simon's walk
 	private float xRandomMax = 1f;	// max x random move for simon's walk
+	public float waitSecondsBeforeStart = 3;
+	private float waitSecondsBeforeStartTimer;
 
 	private static Random random = new Random();
 	private static bool haveNextNextGaussian;
@@ -44,11 +47,15 @@ public class PlayerMovement : MonoBehaviour
 		
 		gameVars = globalvars.GetComponent<GameVars>();
 		Debug.Log("testing console");
+
+		waitSecondsBeforeStartTimer = Time.time + waitSecondsBeforeStart;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
+		if (Time.time < waitSecondsBeforeStartTimer)
+			return;
 
 		if (simon.GetBool("falling"))
 		{
@@ -99,9 +106,11 @@ public class PlayerMovement : MonoBehaviour
 			//cameraPlayer.transform.localRotation.x = rotX * randomMove;
 		
 			Vector3 movement = new Vector3(moveHorizontal*Time.deltaTime, 0.0f, z_Axe_Movement*Time.deltaTime);
+			gameVars.slowWalkScoreMultiplier = 1;
 			if (verticalMovement < 0)
 			{
 				movement.z -= 0.01f;
+				gameVars.slowWalkScoreMultiplier = 0.5f;
 			}
 			rigidbody.velocity = movement * speed;
 		
@@ -110,9 +119,6 @@ public class PlayerMovement : MonoBehaviour
 				-10f,
 				rigidbody.position.z + movement.z* speed);
 
-			
-
-			
 		}
 
 

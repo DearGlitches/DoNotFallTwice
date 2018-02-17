@@ -17,6 +17,8 @@ public class GameVars : MonoBehaviour
 	private Color drunk_info_color;
 	private int info_text_selector = 0;
 	private string[] drunk_info_text;
+
+	public Text levelIndicator;
 	
 	public int health = 1;
 	public float maxAlcool = 1f;
@@ -30,6 +32,7 @@ public class GameVars : MonoBehaviour
 	private float nextDrink = 0.5f;	// used to store the next minimum time for a drink
 	private float nextLoss = 0.1f;	// used to store the next minimum time for an alcool loss
 	public bool GameEnded { get; private set; }
+	public float slowWalkScoreMultiplier = 1f;
 
 	// vars dependant of level don't set them
 	public int level;
@@ -71,6 +74,12 @@ public class GameVars : MonoBehaviour
 
 		drunk_info_text = new string[] {"MMH BEER!", ".. #! .. OUH ..", "Bit D d D D Drunken", "Does anyone have a beer?"};
 		info_text_selector = 0;
+
+		levelIndicator.text = "Level " + level;
+		Destroy(levelIndicator, 3);
+		
+		
+		
 	}
 
 	/*private void Awake()
@@ -117,7 +126,7 @@ public class GameVars : MonoBehaviour
 			myAlcoolLossTime = 0.0f;
 
 
-			score += alcool > 0 ? alcool : 0;
+			score += alcool > 0 ? alcool*slowWalkScoreMultiplier : 0;
 		}
 
 
