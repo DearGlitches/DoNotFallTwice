@@ -214,8 +214,9 @@ public class GameVars : MonoBehaviour
 	{
 		Debug.Log("Next Level");
 		Debug.Log("Score: " + score);
-		Time.timeScale = 0;
+		// Time.timeScale = 0;
 		GameEnded = true;
+		SceneManager.LoadScene("Main");
 	}
 
 
