@@ -16,6 +16,7 @@ public class MenuAction : MonoBehaviour
 	// Use this for initialization
 	void Start () {
 		start.onClick.AddListener(StartGame);
+		exit.onClick.AddListener(ExitGame);
 	}
 	
 	void StartGame()
