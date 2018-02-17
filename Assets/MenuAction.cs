@@ -8,7 +8,6 @@ public class MenuAction : MonoBehaviour
 {
 
 	public Button start;
-	public Button score;
 	public Button exit;
 	private float baseDifficulty = 0.7f; // should be change in GameOverController.cs as well 
 
@@ -19,7 +18,6 @@ public class MenuAction : MonoBehaviour
 	// Use this for initialization
 	void Start () {
 		start.onClick.AddListener(StartGame);
-		score.onClick.AddListener(HighScore);
 		exit.onClick.AddListener(ExitGame);
 		title.CrossFadeAlpha(0.0f, 3.5f, false);
 		Destroy(title, 3.5f);
@@ -31,11 +29,6 @@ public class MenuAction : MonoBehaviour
 		PlayerPrefs.SetFloat("difficulty", baseDifficulty);
 		PlayerPrefs.SetInt("level",1);
 		SceneManager.LoadScene("Main");
-	}
-	
-	void HighScore()
-	{
-		SceneManager.LoadScene("Highscore");
 	}
 	
 	void ExitGame()
