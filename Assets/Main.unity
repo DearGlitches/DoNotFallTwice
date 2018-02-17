@@ -782,21 +782,6 @@ Prefab:
       propertyPath: globalvars
       value: 
       objectReference: {fileID: 1874865247}
-    - target: {fileID: 224047964156520848, guid: 25e8dd201f0ee2943af525a70dc8335a,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -154.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114353832193388588, guid: 25e8dd201f0ee2943af525a70dc8335a,
-        type: 2}
-      propertyPath: m_FontData.m_FontSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114353832193388588, guid: 25e8dd201f0ee2943af525a70dc8335a,
-        type: 2}
-      propertyPath: m_FontData.m_MinSize
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25e8dd201f0ee2943af525a70dc8335a, type: 2}
   m_IsPrefabParent: 0
@@ -2026,22 +2011,14 @@ Prefab:
       objectReference: {fileID: 1548164628}
     - target: {fileID: 114628096029311916, guid: 119666773651bfe468a4bb982de48c04,
         type: 2}
-      propertyPath: simon
-      value: 
-      objectReference: {fileID: 129001842}
-    - target: {fileID: 82769290172572778, guid: 119666773651bfe468a4bb982de48c04,
-        type: 2}
-      propertyPath: m_Volume
-      value: 0.478
-      objectReference: {fileID: 0}
-    - target: {fileID: 114628096029311916, guid: 119666773651bfe468a4bb982de48c04,
-        type: 2}
-      propertyPath: difficulty
-      value: 0
-      objectReference: {fileID: 0}
       propertyPath: drunk_info
       value: 
       objectReference: {fileID: 470247107}
+    - target: {fileID: 114628096029311916, guid: 119666773651bfe468a4bb982de48c04,
+        type: 2}
+      propertyPath: simon
+      value: 
+      objectReference: {fileID: 129001842}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 119666773651bfe468a4bb982de48c04, type: 2}
   m_IsPrefabParent: 0
