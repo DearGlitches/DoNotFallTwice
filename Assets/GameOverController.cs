@@ -23,7 +23,7 @@ public class GameOverController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		this.score.text = "Score: " + (int)PlayerPrefs.GetFloat("score");
+		this.score.text = "Score: " + PlayerPrefs.GetFloat("score").ToString("F0");
 		restartBtn.onClick.AddListener(restart);
 		menuBtn.onClick.AddListener(menu);
 		SubmitButton.onClick.AddListener(Submit);
