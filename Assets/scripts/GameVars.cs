@@ -82,7 +82,7 @@ public class GameVars : MonoBehaviour
 
 		if (Input.GetButton("Jump") && myDrinkTime > nextDrink && alcool < maxAlcool)
 		{
-			audioSrc.PlayOneShot(drinkingSound, 1.2f);
+			audioSrc.PlayOneShot(drinkingSound, 1f);
 			nextDrink = myDrinkTime + drinkDelta;
 			alcool += alcoolPerDrink;
 
@@ -164,13 +164,13 @@ public class GameVars : MonoBehaviour
 		
 		if (--health == 0)
 		{
-			audioSrc.PlayOneShot(deathSound, 0.5f);
+			audioSrc.PlayOneShot(deathSound, 1f);
 			endGame();
 		}
 		else
 		{
 			simon.SetBool("falling", true);
-			float vol = Random.Range(0.2f, 0.5f);
+			float vol = Random.Range(0.4f, 1f);
 			if (carInvolvedInAccident)
 			{
 				audioSrc.PlayOneShot(collisonWithCarSound, vol);
