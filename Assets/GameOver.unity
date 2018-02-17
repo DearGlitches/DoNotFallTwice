@@ -1211,6 +1211,8 @@ MonoBehaviour:
   score: {fileID: 2141582367}
   restartBtn: {fileID: 1802775580}
   menuBtn: {fileID: 1789133079}
+  SubmitButton: {fileID: 540009890}
+  NameField: {fileID: 2054447942}
 --- !u!1 &2054447940
 GameObject:
   m_ObjectHideFlags: 0
